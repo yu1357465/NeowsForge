@@ -1,0 +1,6768 @@
+{
+    "Abrasive": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": true,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Sly"
+        ]
+    },
+    "Accelerant": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Accuracy": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Acrobatics": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "AdaptiveStrike": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 18,
+        "UpgradeDamageBy": 5
+    },
+    "Adrenaline": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Afterimage": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "Afterlife": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Aggression": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "Alchemize": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Alignment": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "AllForOne": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 4
+    },
+    "Anger": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 2
+    },
+    "Anointed": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Retain"
+        ]
+    },
+    "Anticipate": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Apotheosis": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Ancient",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Innate"
+        ]
+    },
+    "Apparition": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Ancient",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal",
+            "Exhaust",
+            "Ethereal"
+        ]
+    },
+    "Armaments": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5
+    },
+    "Arsenal": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "AscendersBane": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Eternal",
+            "Unplayable",
+            "Ethereal"
+        ]
+    },
+    "AshenStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 1
+    },
+    "Assassinate": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate",
+            "Exhaust"
+        ],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 3
+    },
+    "AstralPulse": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 14,
+        "UpgradeDamageBy": 4
+    },
+    "Automation": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Backflip": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 3
+    },
+    "Backstab": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Innate"
+        ],
+        "BaseDamage": 11,
+        "UpgradeDamageBy": 4
+    },
+    "BadLuck": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Eternal",
+            "Unplayable"
+        ]
+    },
+    "BallLightning": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 3
+    },
+    "BansheesCry": {
+        "Cost": 9,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal",
+            "Ethereal"
+        ],
+        "BaseDamage": 33
+    },
+    "Barrage": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 2
+    },
+    "Barricade": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Bash": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Basic",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 2
+    },
+    "BattleTrance": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BeaconOfHope": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "BeamCell": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 1
+    },
+    "BeatDown": {
+        "Cost": 3,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "BeatIntoShape": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 2
+    },
+    "Beckon": {
+        "Cost": 1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Status",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Begone": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BelieveInYou": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BiasedCognition": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Ancient",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BigBang": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Innate"
+        ]
+    },
+    "BlackHole": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BladeDance": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "BladeOfInk": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BlightStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 2
+    },
+    "Bloodletting": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BloodWall": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 16,
+        "UpgradeBlockBy": 4
+    },
+    "Bludgeon": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 32,
+        "UpgradeDamageBy": 10
+    },
+    "Blur": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 3
+    },
+    "Bodyguard": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Basic",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BodySlam": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 1
+    },
+    "Bolas": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 1
+    },
+    "Bombardment": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 18,
+        "UpgradeDamageBy": 6
+    },
+    "BoneShards": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9,
+        "BaseBlock": 9,
+        "UpgradeDamageBy": 3,
+        "UpgradeBlockBy": 3
+    },
+    "BoostAway": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 6,
+        "UpgradeBlockBy": 3
+    },
+    "BootSequence": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate",
+            "Exhaust"
+        ],
+        "BaseBlock": 10,
+        "UpgradeBlockBy": 3
+    },
+    "BorrowedTime": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BouncingFlask": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Brand": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Break": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Ancient",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 20,
+        "UpgradeDamageBy": 10
+    },
+    "Breakthrough": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 4
+    },
+    "BrightestFlame": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Ancient",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BubbleBubble": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Buffer": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BulkUp": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "BulletTime": {
+        "Cost": 3,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Bully": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 2,
+        "UpgradeDamageBy": 1
+    },
+    "Bulwark": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 13,
+        "UpgradeBlockBy": 3
+    },
+    "BundleOfJoy": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Burn": {
+        "Cost": -1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Status",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ],
+        "BaseDamage": 2
+    },
+    "BurningPact": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Burst": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Bury": {
+        "Cost": 4,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 52,
+        "UpgradeDamageBy": 11
+    },
+    "ByrdonisEgg": {
+        "Cost": -1,
+        "Type": "Quest",
+        "Rarity": "Quest",
+        "Class": "Quest",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "ByrdSwoop": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 14,
+        "UpgradeDamageBy": 4
+    },
+    "Calamity": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Calcify": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "CalculatedGamble": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Retain"
+        ]
+    },
+    "CallOfTheVoid": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal",
+            "Innate"
+        ]
+    },
+    "Caltrops": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Capacitor": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "CaptureSpirit": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 1
+    },
+    "Cascade": {
+        "Cost": -1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Catastrophe": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "CelestialMight": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6
+    },
+    "Chaos": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Charge": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "ChargeBattery": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 7,
+        "UpgradeBlockBy": 3
+    },
+    "ChildOfTheStars": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Chill": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "Cinder": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 18,
+        "UpgradeDamageBy": 6
+    },
+    "Clash": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 14,
+        "UpgradeDamageBy": 4
+    },
+    "Claw": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 1
+    },
+    "Cleanse": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "CloakAndDagger": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 6
+    },
+    "CloakOfStars": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 7,
+        "UpgradeBlockBy": 3
+    },
+    "Clumsy": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Unplayable",
+            "Ethereal"
+        ]
+    },
+    "ColdSnap": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "CollisionCourse": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 11,
+        "UpgradeDamageBy": 4
+    },
+    "Colossus": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 3
+    },
+    "Comet": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 33,
+        "UpgradeDamageBy": 11
+    },
+    "Compact": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 6,
+        "UpgradeBlockBy": 1
+    },
+    "CompileDriver": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 3
+    },
+    "Conflagration": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 2,
+        "UpgradeDamageBy": 1
+    },
+    "Conqueror": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "ConsumingShadow": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Convergence": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ]
+    },
+    "Coolant": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Coolheaded": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Coordinate": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "CorrosiveWave": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Corruption": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Ancient",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "CosmicIndifference": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 6,
+        "UpgradeBlockBy": 3
+    },
+    "Countdown": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "CrashLanding": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 21,
+        "UpgradeDamageBy": 5
+    },
+    "CreativeAi": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "CrescentSpear": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 2,
+        "UpgradeDamageBy": 1
+    },
+    "CrimsonMantle": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Cruelty": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "CrushUnder": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 1
+    },
+    "CurseOfTheBell": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Eternal",
+            "Unplayable"
+        ]
+    },
+    "DaggerSpray": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 4,
+        "UpgradeDamageBy": 2
+    },
+    "DaggerThrow": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 3
+    },
+    "DanseMacabre": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "DarkEmbrace": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Darkness": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "DarkShackles": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Dash": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "BaseBlock": 10,
+        "UpgradeDamageBy": 3,
+        "UpgradeBlockBy": 3
+    },
+    "Dazed": {
+        "Cost": -1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Status",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal",
+            "Unplayable"
+        ]
+    },
+    "DeadlyPoison": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Deathbringer": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "DeathMarch": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 1
+    },
+    "DeathsDoor": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 6,
+        "UpgradeBlockBy": 1
+    },
+    "Debilitate": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 2
+    },
+    "Debris": {
+        "Cost": 1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Status",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Debt": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "Decay": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ],
+        "BaseDamage": 2
+    },
+    "DecisionsDecisions": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Unplayable"
+        ]
+    },
+    "DefendDefect": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Basic",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 3
+    },
+    "DefendIronclad": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Basic",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 3
+    },
+    "DefendNecrobinder": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Basic",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 3
+    },
+    "DefendRegent": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Basic",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 3
+    },
+    "DefendSilent": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Basic",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 3
+    },
+    "Defile": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ],
+        "BaseDamage": 13,
+        "UpgradeDamageBy": 4
+    },
+    "Deflect": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 4,
+        "UpgradeBlockBy": 3
+    },
+    "Defragment": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Defy": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ],
+        "BaseBlock": 6,
+        "UpgradeBlockBy": 3
+    },
+    "Delay": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 11,
+        "UpgradeBlockBy": 2
+    },
+    "Demesne": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ]
+    },
+    "DemonForm": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "DemonicShield": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "DeprecatedCard": {
+        "Cost": 0,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Deprecated",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Devastate": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 30,
+        "UpgradeDamageBy": 10
+    },
+    "DevourLife": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Dirge": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Discovery": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "Disintegration": {
+        "Cost": -1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Dismantle": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 2
+    },
+    "Distraction": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "DodgeAndRoll": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 4,
+        "UpgradeBlockBy": 2
+    },
+    "Dominate": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "DoubleEnergy": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Doubt": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "DrainPower": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 2
+    },
+    "DramaticEntrance": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Innate"
+        ],
+        "BaseDamage": 11,
+        "UpgradeDamageBy": 4
+    },
+    "Dredge": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Retain"
+        ]
+    },
+    "DrumOfBattle": {
+        "Cost": 0,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Dualcast": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Basic",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "DualWield": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "DyingStar": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 2
+    },
+    "EchoForm": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal",
+            "Ethereal"
+        ]
+    },
+    "EchoingSlash": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 3
+    },
+    "Eidolon": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "EndOfDays": {
+        "Cost": 3,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "EnergySurge": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "EnfeeblingTouch": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ]
+    },
+    "Enlightenment": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Enthralled": {
+        "Cost": 2,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Eternal"
+        ]
+    },
+    "Entrench": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Entropy": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "Envenom": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Equilibrium": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ],
+        "BaseBlock": 13,
+        "UpgradeBlockBy": 3
+    },
+    "Eradicate": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ],
+        "BaseDamage": 11,
+        "UpgradeDamageBy": 3
+    },
+    "EscapePlan": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 3,
+        "UpgradeBlockBy": 2
+    },
+    "EternalArmor": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "EvilEye": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseBlock": 8,
+        "UpgradeBlockBy": 3
+    },
+    "ExpectAFight": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Expertise": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Expose": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Exterminate": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 1
+    },
+    "FallingStar": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Basic",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 4
+    },
+    "FanOfKnives": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Fasten": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Fear": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 1
+    },
+    "Feed": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 2
+    },
+    "FeedingFrenzy": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "FeelNoPain": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Feral": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Fetch": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 3
+    },
+    "FiendFire": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 3
+    },
+    "FightMe": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 1
+    },
+    "FightThrough": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 13,
+        "UpgradeBlockBy": 4
+    },
+    "Finesse": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 4,
+        "UpgradeBlockBy": 3
+    },
+    "Finisher": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 2
+    },
+    "Fisticuffs": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 2
+    },
+    "FlakCannon": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 3
+    },
+    "FlameBarrier": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 12,
+        "UpgradeBlockBy": 4
+    },
+    "Flanking": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "FlashOfSteel": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 3
+    },
+    "Flatten": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 12,
+        "UpgradeDamageBy": 4
+    },
+    "Flechettes": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 2
+    },
+    "FlickFlack": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": true,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Sly"
+        ],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 2
+    },
+    "FocusedStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 2
+    },
+    "FollowThrough": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 2
+    },
+    "Folly": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Unplayable",
+            "Eternal",
+            "Innate",
+            "Ethereal"
+        ]
+    },
+    "Footwork": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "ForbiddenGrimoire": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Ancient",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Eternal"
+        ]
+    },
+    "ForegoneConclusion": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "ForgottenRitual": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "FranticEscape": {
+        "Cost": 1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Status",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Friendship": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Ftl": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 1
+    },
+    "Fuel": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Token",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Furnace": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Fusion": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "GammaBlast": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 13,
+        "UpgradeDamageBy": 5
+    },
+    "GangUp": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 2
+    },
+    "GatherLight": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 8,
+        "UpgradeBlockBy": 3
+    },
+    "Genesis": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "GeneticAlgorithm": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "GiantRock": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Token",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 16,
+        "UpgradeDamageBy": 4
+    },
+    "Glacier": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 6,
+        "UpgradeBlockBy": 3
+    },
+    "Glasswork": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 3
+    },
+    "Glimmer": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "GlimpseBeyond": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Glitterstream": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 11,
+        "UpgradeBlockBy": 2
+    },
+    "Glow": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "GoForTheEyes": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 1
+    },
+    "GoldAxe": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ],
+        "BaseDamage": 1
+    },
+    "GrandFinale": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 60,
+        "UpgradeDamageBy": 15
+    },
+    "Graveblast": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ],
+        "BaseDamage": 4,
+        "UpgradeDamageBy": 2
+    },
+    "GraveWarden": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 8,
+        "UpgradeBlockBy": 3
+    },
+    "Greed": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Eternal",
+            "Unplayable"
+        ]
+    },
+    "Guards": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "GuidingStar": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 12,
+        "UpgradeDamageBy": 1
+    },
+    "Guilty": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "GunkUp": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 4,
+        "UpgradeDamageBy": 1
+    },
+    "Hailstorm": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "HammerTime": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "HandOfGreed": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 20,
+        "UpgradeDamageBy": 5
+    },
+    "HandTrick": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": true,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Sly"
+        ],
+        "BaseBlock": 7,
+        "UpgradeBlockBy": 3
+    },
+    "Hang": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 3
+    },
+    "Haunt": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Havoc": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Haze": {
+        "Cost": 3,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": true,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Sly"
+        ]
+    },
+    "Headbutt": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 3
+    },
+    "HeavenlyDrill": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 2
+    },
+    "Hegemony": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 15,
+        "UpgradeDamageBy": 3
+    },
+    "HeirloomHammer": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 20,
+        "UpgradeDamageBy": 5
+    },
+    "HelixDrill": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 2
+    },
+    "HelloWorld": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "Hellraiser": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Hemokinesis": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 15,
+        "UpgradeDamageBy": 5
+    },
+    "HiddenCache": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "HiddenDaggers": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "HiddenGem": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "HighFive": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 11,
+        "UpgradeDamageBy": 2
+    },
+    "Hologram": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ],
+        "BaseBlock": 3,
+        "UpgradeBlockBy": 2
+    },
+    "Hotfix": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "HowlFromBeyond": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 16,
+        "UpgradeDamageBy": 5
+    },
+    "HuddleUp": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Hyperbeam": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 26,
+        "UpgradeDamageBy": 8
+    },
+    "IAmInvincible": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 10,
+        "UpgradeBlockBy": 3
+    },
+    "IceLance": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 19,
+        "UpgradeDamageBy": 5
+    },
+    "Ignition": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "Impatience": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Impervious": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseBlock": 30,
+        "UpgradeBlockBy": 10
+    },
+    "Infection": {
+        "Cost": -1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Status",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ],
+        "BaseDamage": 3
+    },
+    "InfernalBlade": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Inferno": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "InfiniteBlades": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "Inflame": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Injury": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "Intercept": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 9,
+        "UpgradeBlockBy": 4
+    },
+    "Invoke": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "IronWave": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "BaseBlock": 5,
+        "UpgradeDamageBy": 2,
+        "UpgradeBlockBy": 2
+    },
+    "Iteration": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "JackOfAllTrades": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Jackpot": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 25,
+        "UpgradeDamageBy": 5
+    },
+    "Juggernaut": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Juggling": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "KinglyKick": {
+        "Cost": 4,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 27,
+        "UpgradeDamageBy": 8
+    },
+    "KinglyPunch": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 2
+    },
+    "KnifeTrap": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Knockdown": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 4
+    },
+    "KnockoutBlow": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 30,
+        "UpgradeDamageBy": 8
+    },
+    "KnowThyPlace": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "LanternKey": {
+        "Cost": -1,
+        "Type": "Quest",
+        "Rarity": "Quest",
+        "Class": "Quest",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "Largesse": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "LeadingStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 3
+    },
+    "Leap": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 9,
+        "UpgradeBlockBy": 3
+    },
+    "LegionOfBone": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "LegSweep": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 11,
+        "UpgradeBlockBy": 3
+    },
+    "Lethality": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ]
+    },
+    "Lift": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 11,
+        "UpgradeBlockBy": 5
+    },
+    "LightningRod": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 4,
+        "UpgradeBlockBy": 3
+    },
+    "Loop": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Luminesce": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Token",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Retain"
+        ]
+    },
+    "LunarBlast": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 4,
+        "UpgradeDamageBy": 1
+    },
+    "MachineLearning": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "MadScience": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ],
+        "BaseDamage": 12,
+        "BaseBlock": 8
+    },
+    "MakeItSo": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "Malaise": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Mangle": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 15,
+        "UpgradeDamageBy": 5
+    },
+    "ManifestAuthority": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 7,
+        "UpgradeBlockBy": 1
+    },
+    "MasterOfStrategy": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "MasterPlanner": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": true,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Sly"
+        ]
+    },
+    "Maul": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Ancient",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 1
+    },
+    "Mayhem": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Melancholy": {
+        "Cost": 3,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 13,
+        "UpgradeBlockBy": 4
+    },
+    "MementoMori": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 4,
+        "UpgradeDamageBy": 1
+    },
+    "Metamorphosis": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "MeteorShower": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Ancient",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 14,
+        "UpgradeDamageBy": 7
+    },
+    "MeteorStrike": {
+        "Cost": 5,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 24,
+        "UpgradeDamageBy": 6
+    },
+    "Mimic": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "MindBlast": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ],
+        "BaseDamage": 1
+    },
+    "MindRot": {
+        "Cost": -1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "MinionDiveBomb": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Token",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 13,
+        "UpgradeDamageBy": 3
+    },
+    "MinionSacrifice": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Token",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseBlock": 9,
+        "UpgradeBlockBy": 3
+    },
+    "MinionStrike": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Token",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "Mirage": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Misery": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 2
+    },
+    "Modded": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "MoltenFist": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 4
+    },
+    "MomentumStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 3
+    },
+    "MonarchsGaze": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Monologue": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ]
+    },
+    "MultiCast": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Murder": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 1
+    },
+    "NecroMastery": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "NegativePulse": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 1
+    },
+    "NeowsFury": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Ancient",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 4
+    },
+    "Neurosurge": {
+        "Cost": 0,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Neutralize": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Basic",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 1
+    },
+    "NeutronAegis": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Nightmare": {
+        "Cost": 3,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "NoEscape": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Normality": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "Nostalgia": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "NotYet": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "NoxiousFumes": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Null": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 3
+    },
+    "Oblivion": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Offering": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Omnislice": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 3
+    },
+    "OneTwoPunch": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Orbit": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Outbreak": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Outmaneuver": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Overclock": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "PactsEnd": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 17,
+        "UpgradeDamageBy": 6
+    },
+    "Pagestorm": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ]
+    },
+    "PaleBlueDot": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Panache": {
+        "Cost": 0,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "PanicButton": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseBlock": 30,
+        "UpgradeBlockBy": 10
+    },
+    "Parry": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Parse": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ]
+    },
+    "ParticleWall": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 9,
+        "UpgradeBlockBy": 3
+    },
+    "Patter": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 9,
+        "UpgradeBlockBy": 2
+    },
+    "Peck": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 2
+    },
+    "PerfectedStrike": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 2,
+        "UpgradeDamageBy": 1
+    },
+    "PhantomBlades": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ]
+    },
+    "PhotonCut": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 3
+    },
+    "PiercingWail": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Pillage": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "PillarOfCreation": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 3,
+        "UpgradeBlockBy": 1
+    },
+    "Pinpoint": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 15,
+        "UpgradeDamageBy": 4
+    },
+    "PoisonedStab": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 2
+    },
+    "Poke": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "PommelStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 1
+    },
+    "PoorSleep": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable",
+            "Retain"
+        ]
+    },
+    "Pounce": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 12,
+        "UpgradeDamageBy": 6
+    },
+    "PreciseCut": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 2
+    },
+    "Predator": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 15,
+        "UpgradeDamageBy": 5
+    },
+    "Prepared": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "PrepTime": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "PrimalForce": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Production": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Prolong": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "Prophesize": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Protector": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Ancient",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 1
+    },
+    "Prowess": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "PullAggro": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 7,
+        "UpgradeBlockBy": 2
+    },
+    "PullFromBelow": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 2
+    },
+    "Purity": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain",
+            "Exhaust"
+        ]
+    },
+    "Putrefy": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Pyre": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Quadcast": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Ancient",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Quasar": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Radiate": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 1
+    },
+    "Rage": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Rainbow": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "Rally": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 12,
+        "UpgradeBlockBy": 5
+    },
+    "Rampage": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9
+    },
+    "Rattle": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 2
+    },
+    "Reanimate": {
+        "Cost": 3,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Reap": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ],
+        "BaseDamage": 27,
+        "UpgradeDamageBy": 6
+    },
+    "ReaperForm": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ]
+    },
+    "Reave": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 2
+    },
+    "Reboot": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Rebound": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 3
+    },
+    "RefineBlade": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Reflect": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 17,
+        "UpgradeBlockBy": 4
+    },
+    "Reflex": {
+        "Cost": 3,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": true,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Sly"
+        ]
+    },
+    "Refract": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 3
+    },
+    "Regret": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "Relax": {
+        "Cost": 3,
+        "Type": "Skill",
+        "Rarity": "Ancient",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseBlock": 15,
+        "UpgradeBlockBy": 2
+    },
+    "Rend": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 3
+    },
+    "Resonance": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Restlessness": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ]
+    },
+    "Ricochet": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": true,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Sly"
+        ],
+        "BaseDamage": 3
+    },
+    "RightHandHand": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 4,
+        "UpgradeDamageBy": 2
+    },
+    "RipAndTear": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 2
+    },
+    "RocketPunch": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 13,
+        "UpgradeDamageBy": 1
+    },
+    "RollingBoulder": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "RoyalGamble": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Retain"
+        ]
+    },
+    "Royalties": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Rupture": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Sacrifice": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ]
+    },
+    "Salvo": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ],
+        "BaseDamage": 12,
+        "UpgradeDamageBy": 4
+    },
+    "Scavenge": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Scourge": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Scrape": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 3
+    },
+    "Scrawl": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Retain"
+        ]
+    },
+    "SculptingStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal",
+            "Ethereal",
+            "Ethereal"
+        ],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 3
+    },
+    "Seance": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ]
+    },
+    "SecondWind": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 2
+    },
+    "SecretTechnique": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "SecretWeapon": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "SeekerStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 3
+    },
+    "SeekingEdge": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "SentryMode": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "SerpentForm": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "SetupStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 2
+    },
+    "SevenStars": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 7
+    },
+    "Severance": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 13,
+        "UpgradeDamageBy": 5
+    },
+    "Shadowmeld": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "ShadowShield": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 11,
+        "UpgradeBlockBy": 4
+    },
+    "ShadowStep": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Shame": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "SharedFate": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Shatter": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 11,
+        "UpgradeDamageBy": 4
+    },
+    "ShiningStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 3
+    },
+    "Shiv": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Token",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 4,
+        "UpgradeDamageBy": 2
+    },
+    "Shockwave": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Shroud": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 2,
+        "UpgradeBlockBy": 1
+    },
+    "ShrugItOff": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 8,
+        "UpgradeBlockBy": 3
+    },
+    "SicEm": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 1
+    },
+    "SignalBoost": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Skewer": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 3
+    },
+    "Skim": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "SleightOfFlesh": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Slice": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "Slimed": {
+        "Cost": 1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Status",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Sloth": {
+        "Cost": -1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Smokestack": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Snakebite": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ]
+    },
+    "Snap": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain",
+            "Retain",
+            "Retain"
+        ],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 3
+    },
+    "Sneaky": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": true,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Sly"
+        ]
+    },
+    "SolarStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 9,
+        "UpgradeDamageBy": 1
+    },
+    "Soot": {
+        "Cost": -1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Status",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "Soul": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Token",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "SoulStorm": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 2,
+        "UpgradeDamageBy": 1
+    },
+    "SovereignBlade": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Token",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ],
+        "BaseDamage": 10
+    },
+    "Sow": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 3
+    },
+    "SpectrumShift": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Speedster": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "Spinner": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "SpiritOfAsh": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ]
+    },
+    "Spite": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5
+    },
+    "Splash": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "SpoilsMap": {
+        "Cost": -1,
+        "Type": "Quest",
+        "Rarity": "Quest",
+        "Class": "Quest",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "SpoilsOfBattle": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "SporeMind": {
+        "Cost": 1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Spur": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ]
+    },
+    "Squash": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 2
+    },
+    "Squeeze": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 1
+    },
+    "Stack": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Stampede": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Stardust": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 2
+    },
+    "Stoke": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Stomp": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 12,
+        "UpgradeDamageBy": 3
+    },
+    "StoneArmor": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Storm": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "StormOfSteel": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Strangle": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 2
+    },
+    "Stratagem": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "StrikeDefect": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Basic",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "StrikeIronclad": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Basic",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "StrikeNecrobinder": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Basic",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "StrikeRegent": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Basic",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "StrikeSilent": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Basic",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "Subroutine": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "SuckerPunch": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 8,
+        "UpgradeDamageBy": 2
+    },
+    "SummonForth": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ]
+    },
+    "Sunder": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 24,
+        "UpgradeDamageBy": 8
+    },
+    "Supercritical": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Supermassive": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 1
+    },
+    "Suppress": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Ancient",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ],
+        "BaseDamage": 11,
+        "UpgradeDamageBy": 6
+    },
+    "Survivor": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Basic",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 8,
+        "UpgradeBlockBy": 3
+    },
+    "SweepingBeam": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 6,
+        "UpgradeDamageBy": 3
+    },
+    "SweepingGaze": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Token",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal",
+            "Exhaust"
+        ],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 5
+    },
+    "SwordBoomerang": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3
+    },
+    "SwordSage": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Synchronize": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "Synthesis": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 12,
+        "UpgradeDamageBy": 6
+    },
+    "Tactician": {
+        "Cost": 3,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": true,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Sly"
+        ]
+    },
+    "TagTeam": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 11,
+        "UpgradeDamageBy": 4
+    },
+    "Tank": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Taunt": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 7,
+        "UpgradeBlockBy": 1
+    },
+    "TearAsunder": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 2
+    },
+    "Tempest": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Terraforming": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "TeslaCoil": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 3,
+        "UpgradeDamageBy": 3
+    },
+    "TheBomb": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "TheGambit": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 50,
+        "UpgradeBlockBy": 25
+    },
+    "TheHunt": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 5
+    },
+    "TheScythe": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "TheSealedThrone": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Ancient",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "TheSmith": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "ThinkingAhead": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "Thrash": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 4,
+        "UpgradeDamageBy": 2
+    },
+    "ThrummingHatchet": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 11,
+        "UpgradeDamageBy": 3
+    },
+    "Thunder": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Thunderclap": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 4,
+        "UpgradeDamageBy": 3
+    },
+    "TimesUp": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Retain"
+        ],
+        "BaseDamage": 1
+    },
+    "ToolsOfTheTrade": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "ToricToughness": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Event",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 5,
+        "UpgradeBlockBy": 2
+    },
+    "Toxic": {
+        "Cost": 1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Status",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 5
+    },
+    "Tracking": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Transfigure": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "TrashToTreasure": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate"
+        ]
+    },
+    "Tremble": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "TrueGrit": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseBlock": 7,
+        "UpgradeBlockBy": 2
+    },
+    "Turbo": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "TwinStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 2
+    },
+    "Tyranny": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Innate"
+        ]
+    },
+    "UltimateDefend": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 11,
+        "UpgradeBlockBy": 4
+    },
+    "UltimateStrike": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 14,
+        "UpgradeDamageBy": 6
+    },
+    "Undeath": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseBlock": 7,
+        "UpgradeBlockBy": 2
+    },
+    "Unleash": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Basic",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 1
+    },
+    "Unmovable": {
+        "Cost": 2,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Unrelenting": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 12,
+        "UpgradeDamageBy": 6
+    },
+    "Untouchable": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Silent",
+        "IsFinesse": true,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Sly"
+        ],
+        "BaseBlock": 6,
+        "UpgradeBlockBy": 2
+    },
+    "UpMySleeve": {
+        "Cost": 2,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Uppercut": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 13
+    },
+    "Uproar": {
+        "Cost": 2,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 2
+    },
+    "Veilpiercer": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal"
+        ],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 3
+    },
+    "Venerate": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Basic",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Vicious": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Void": {
+        "Cost": -1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Status",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Unplayable",
+            "Ethereal"
+        ]
+    },
+    "VoidForm": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Rare",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": true,
+        "Keywords": [
+            "Ethereal",
+            "Ethereal"
+        ]
+    },
+    "Volley": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Colorless",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 10,
+        "UpgradeDamageBy": 4
+    },
+    "Voltaic": {
+        "Cost": 3,
+        "Type": "Skill",
+        "Rarity": "Rare",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Exhaust"
+        ]
+    },
+    "WasteAway": {
+        "Cost": -1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Token",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "WellLaidPlans": {
+        "Cost": 1,
+        "Type": "Power",
+        "Rarity": "Uncommon",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Retain"
+        ]
+    },
+    "Whirlwind": {
+        "Cost": 0,
+        "Type": "Attack",
+        "Rarity": "Uncommon",
+        "Class": "Ironclad",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 5,
+        "UpgradeDamageBy": 3
+    },
+    "Whistle": {
+        "Cost": 3,
+        "Type": "Attack",
+        "Rarity": "Ancient",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ],
+        "BaseDamage": 33,
+        "UpgradeDamageBy": 11
+    },
+    "WhiteNoise": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Uncommon",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust"
+        ]
+    },
+    "Wish": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Ancient",
+        "Class": "Event",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Retain"
+        ]
+    },
+    "Wisp": {
+        "Cost": 0,
+        "Type": "Skill",
+        "Rarity": "Common",
+        "Class": "Necrobinder",
+        "IsFinesse": false,
+        "IsExhaust": true,
+        "IsEthereal": false,
+        "Keywords": [
+            "Exhaust",
+            "Retain"
+        ]
+    },
+    "Wound": {
+        "Cost": -1,
+        "Type": "Status",
+        "Rarity": "Status",
+        "Class": "Status",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Unplayable"
+        ]
+    },
+    "WraithForm": {
+        "Cost": 3,
+        "Type": "Power",
+        "Rarity": "Ancient",
+        "Class": "Silent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    },
+    "Writhe": {
+        "Cost": -1,
+        "Type": "Curse",
+        "Rarity": "Curse",
+        "Class": "Curse",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [
+            "Innate",
+            "Unplayable"
+        ]
+    },
+    "WroughtInWar": {
+        "Cost": 1,
+        "Type": "Attack",
+        "Rarity": "Common",
+        "Class": "Regent",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": [],
+        "BaseDamage": 7,
+        "UpgradeDamageBy": 2
+    },
+    "Zap": {
+        "Cost": 1,
+        "Type": "Skill",
+        "Rarity": "Basic",
+        "Class": "Defect",
+        "IsFinesse": false,
+        "IsExhaust": false,
+        "IsEthereal": false,
+        "Keywords": []
+    }
+}
