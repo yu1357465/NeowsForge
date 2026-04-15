@@ -1,0 +1,201 @@
+// 🎯 机制分类：【Others】
+// 📦 进度批次：第 23 组 (共 25 组)
+// 🗃️ 包含卡牌：9 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: TheScythe.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(CurrentDamage, ValueProp.Move),
+		new IntVar("Increase", 3m)
+	});
+
+	public TheScythe()
+		: base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		int intValue = base.DynamicVars["Increase"].IntValue;
+		BuffFromPlay(intValue);
+		(base.DeckVersion as TheScythe)?.BuffFromPlay(intValue);
+	}
+
+// ========================================
+// 文件名: TheSealedThrone.cs
+// ========================================
+public sealed class TheSealedThrone : CardModel
+{
+	public override int CanonicalStarCost => 3;
+
+	public TheSealedThrone()
+		: base(1, CardType.Power, CardRarity.Ancient, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<TheSealedThronePower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+
+	protected override void OnUpgrade()
+	{
+		AddKeyword(CardKeyword.Innate);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: TheSmith.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new ForgeVar(30));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => HoverTipFactory.FromForge();
+
+	public TheSmith()
+		: base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await ForgeCmd.Forge(base.DynamicVars.Forge.IntValue, base.Owner, this);
+	}
+
+// ========================================
+// 文件名: Thunder.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<ThunderPower>(6m));
+
+	public Thunder()
+		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<ThunderPower>(base.Owner.Creature, base.DynamicVars["ThunderPower"].BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: TimesUp.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new CalculationBaseVar(0m),
+		new ExtraDamageVar(1m),
+		new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel _, Creature? target) => target?.GetPowerAmount<DoomPower>() ?? 0)
+	});
+
+	public TimesUp()
+		: base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.CalculatedDamage).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: ToolsOfTheTrade.cs
+// ========================================
+public sealed class ToolsOfTheTrade : CardModel
+{
+	public ToolsOfTheTrade()
+		: base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<ToolsOfTheTradePower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+
+	protected override void OnUpgrade()
+	{
+		base.EnergyCost.UpgradeBy(-1);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: TrashToTreasure.cs
+// ========================================
+public sealed class TrashToTreasure : CardModel
+{
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.Static(StaticHoverTip.Channeling));
+
+	public TrashToTreasure()
+		: base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<TrashToTreasurePower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+
+	protected override void OnUpgrade()
+	{
+		AddKeyword(CardKeyword.Innate);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Tremble.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<VulnerablePower>(3m));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<VulnerablePower>());
+
+	public Tremble()
+		: base(1, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<VulnerablePower>(cardPlay.Target, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: TwinStrike.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(5m, ValueProp.Move));
+
+	public TwinStrike()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(2).FromCard(this)
+			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+	}
+

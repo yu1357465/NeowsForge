@@ -1,0 +1,200 @@
+// 🎯 机制分类：【Card_Generation】
+// 📦 进度批次：第 3 组 (共 4 组)
+// 🗃️ 包含卡牌：9 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: Neurosurge.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new PowerVar<NeurosurgePower>(3m),
+		new EnergyVar(3),
+		new CardsVar(2)
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlyArray<IHoverTip>(new IHoverTip[2]
+	{
+		HoverTipFactory.FromPower<DoomPower>(),
+		base.EnergyHoverTip
+	});
+
+	public Neurosurge()
+		: base(0, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PlayerCmd.GainEnergy(base.DynamicVars.Energy.BaseValue, base.Owner);
+		await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
+		await PowerCmd.Apply<NeurosurgePower>(base.Owner.Creature, base.DynamicVars["NeurosurgePower"].IntValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Offering.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new HpLossVar(6m),
+		new EnergyVar(2),
+		new CardsVar(3)
+	});
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(base.EnergyHoverTip);
+
+	public Offering()
+		: base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.Damage(choiceContext, base.Owner.Creature, base.DynamicVars.HpLoss.BaseValue, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
+		await PlayerCmd.GainEnergy(base.DynamicVars.Energy.IntValue, base.Owner);
+		await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
+	}
+
+// ========================================
+// 文件名: Overclock.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(2));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromCard<Burn>());
+
+	public Overclock()
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		NFireBurningVfx child = NFireBurningVfx.Create(base.Owner.Creature, 1f, goingRight: false);
+		NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(child);
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
+		CardModel card = base.CombatState.CreateCard<Burn>(base.Owner);
+		CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Discard, addedByPlayer: true));
+		await Cmd.Wait(0.5f);
+	}
+
+// ========================================
+// 文件名: PactsEnd.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(17m, ValueProp.Move),
+		new CardsVar(3)
+	});
+
+	protected override bool IsPlayable => CardPile.GetCards(base.Owner, PileType.Exhaust).Count() >= base.DynamicVars.Cards.IntValue;
+
+	public PactsEnd()
+		: base(0, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(base.CombatState)
+			.WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: Pagestorm.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(1));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromKeyword(CardKeyword.Ethereal));
+
+	public Pagestorm()
+		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<PagestormPower>(base.Owner.Creature, base.DynamicVars.Cards.BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: PaleBlueDot.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new CardsVar(1),
+		new DynamicVar("CardPlay", 5m)
+	});
+
+	public PaleBlueDot()
+		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<PaleBlueDotPower>(base.Owner.Creature, base.DynamicVars.Cards.BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Parse.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(3));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Ethereal);
+
+	public Parse()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.IntValue, base.Owner);
+	}
+
+// ========================================
+// 文件名: PommelStrike.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(9m, ValueProp.Move),
+		new CardsVar(1)
+	});
+
+	public PommelStrike()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
+			.Execute(choiceContext);
+		await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
+	}
+
+// ========================================
+// 文件名: Prophesize.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(6));
+
+	public Prophesize()
+		: base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.AttackAnimDelay);
+		await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
+	}
+

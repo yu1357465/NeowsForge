@@ -1,0 +1,223 @@
+// 🎯 机制分类：【Others】
+// 📦 进度批次：第 14 组 (共 25 组)
+// 🗃️ 包含卡牌：10 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: MasterPlanner.cs
+// ========================================
+public sealed class MasterPlanner : CardModel
+{
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromKeyword(CardKeyword.Sly));
+
+	public MasterPlanner()
+		: base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<MasterPlannerPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+
+	protected override void OnUpgrade()
+	{
+		base.EnergyCost.UpgradeBy(-1);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Mayhem.cs
+// ========================================
+public sealed class Mayhem : CardModel
+{
+	public Mayhem()
+		: base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await PowerCmd.Apply<MayhemPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+
+	protected override void OnUpgrade()
+	{
+		base.EnergyCost.UpgradeBy(-1);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Mimic.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new CalculationBaseVar(0m),
+		new CalculationExtraVar(1m),
+		new CalculatedBlockVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? target) => target?.Block ?? 0)
+	});
+
+	public override bool GainsBlock => true;
+
+	public Mimic()
+		: base(1, CardType.Skill, CardRarity.Rare, TargetType.AnyAlly)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.CalculatedBlock.Calculate(cardPlay.Target), base.DynamicVars.CalculatedBlock.Props, cardPlay);
+	}
+
+// ========================================
+// 文件名: MindBlast.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new CalculationBaseVar(0m),
+		new ExtraDamageVar(1m),
+		new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => PileType.Draw.GetPile(card.Owner).Cards.Count)
+	});
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Innate);
+
+	public MindBlast()
+		: base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.CalculatedDamage).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_blunt")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: MindRot.cs
+// ========================================
+public sealed class MindRot : CardModel, KnowledgeDemon.IChoosable
+{
+	public override bool CanBeGeneratedInCombat => false;
+
+	public override int MaxUpgradeLevel => 0;
+
+	protected override IEnumerable<DynamicVar> CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<MindRotPower>(1m));
+
+	public MindRot()
+		: base(-1, CardType.Status, CardRarity.Status, TargetType.None)
+	{
+	}
+
+	public async Task OnChosen()
+	{
+		await PowerCmd.Apply<MindRotPower>(base.Owner.Creature, base.DynamicVars["MindRotPower"].IntValue, base.Owner.Creature, this);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: MinionDiveBomb.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(13m, ValueProp.Move));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public MinionDiveBomb()
+		: base(0, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).WithAttackerAnim("Cast", 1f)
+			.Targeting(cardPlay.Target)
+			.WithAttackerFx(() => NMinionDiveBombVfx.Create(base.Owner.Creature, cardPlay.Target))
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: MinionSacrifice.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new BlockVar(9m, ValueProp.Move));
+
+	public MinionSacrifice()
+		: base(0, CardType.Skill, CardRarity.Token, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
+	}
+
+// ========================================
+// 文件名: MomentumStrike.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(10m, ValueProp.Move));
+
+	public MomentumStrike()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		base.EnergyCost.SetThisCombat(0);
+	}
+
+// ========================================
+// 文件名: Murder.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new CalculationBaseVar(1m),
+		new ExtraDamageVar(1m),
+		new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => CombatManager.Instance.History.Entries.OfType<CardDrawnEntry>().Count((CardDrawnEntry e) => e.Actor == card.Owner.Creature))
+	});
+
+	public Murder()
+		: base(3, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.CalculatedDamage).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: NecroMastery.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new SummonVar(5m));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.Static(StaticHoverTip.SummonDynamic, base.DynamicVars.Summon));
+
+	public NecroMastery()
+		: base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await OstyCmd.Summon(choiceContext, base.Owner, base.DynamicVars.Summon.BaseValue, this);
+		await PowerCmd.Apply<NecroMasteryPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+

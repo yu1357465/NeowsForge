@@ -1,0 +1,176 @@
+// 🎯 机制分类：【Others】
+// 📦 进度批次：第 19 组 (共 25 组)
+// 🗃️ 包含卡牌：9 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: SignalBoost.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<SignalBoostPower>(1m));
+
+	public SignalBoost()
+		: base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<SignalBoostPower>(base.Owner.Creature, base.DynamicVars["SignalBoostPower"].BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Skewer.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(8m, ValueProp.Move));
+
+	public Skewer()
+		: base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(ResolveEnergyXValue()).FromCard(this)
+			.Targeting(cardPlay.Target)
+			.WithHitVfxNode((Creature t) => NStabVfx.Create(t, facingEnemies: true, VfxColor.Gold))
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: SleightOfFlesh.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<SleightOfFleshPower>(9m));
+
+	public SleightOfFlesh()
+		: base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<SleightOfFleshPower>(base.Owner.Creature, base.DynamicVars["SleightOfFleshPower"].BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Sloth.cs
+// ========================================
+public sealed class Sloth : CardModel, KnowledgeDemon.IChoosable
+{
+	public override int MaxUpgradeLevel => 0;
+
+	public override bool CanBeGeneratedInCombat => false;
+
+	protected override IEnumerable<DynamicVar> CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<SlothPower>(3m));
+
+	public Sloth()
+		: base(-1, CardType.Status, CardRarity.Status, TargetType.None)
+	{
+	}
+
+	public async Task OnChosen()
+	{
+		await PowerCmd.Apply<SlothPower>(base.Owner.Creature, base.DynamicVars["SlothPower"].IntValue, base.Owner.Creature, this);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Smokestack.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<SmokestackPower>(5m));
+
+	public Smokestack()
+		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<SmokestackPower>(base.Owner.Creature, base.DynamicVars["SmokestackPower"].BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Snakebite.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<PoisonPower>(7m));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<PoisonPower>());
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Retain);
+
+	public Snakebite()
+		: base(2, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		VfxCmd.PlayOnCreatureCenter(cardPlay.Target, "vfx/vfx_bite");
+		await PowerCmd.Apply<PoisonPower>(cardPlay.Target, base.DynamicVars.Poison.BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Sneaky.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<SneakyPower>(1m));
+
+	public Sneaky()
+		: base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<SneakyPower>(base.Owner.Creature, base.DynamicVars["SneakyPower"].BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: SolarStrike.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(9m, ValueProp.Move),
+		new StarsVar(1)
+	});
+
+	public SolarStrike()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		await PlayerCmd.GainStars(base.DynamicVars.Stars.BaseValue, base.Owner);
+	}
+
+// ========================================
+// 文件名: Soot.cs
+// ========================================
+public sealed class Soot : CardModel
+{
+	public override bool CanBeGeneratedInCombat => false;
+
+	public override int MaxUpgradeLevel => 0;
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Unplayable);
+
+	public Soot()
+		: base(-1, CardType.Status, CardRarity.Status, TargetType.None)
+	{
+	}
+}
+
+...(内容已截断)
+

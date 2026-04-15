@@ -1,0 +1,280 @@
+// 🎯 机制分类：【X_Cost_Loops】
+// 📦 进度批次：第 1 组 (共 5 组)
+// 🗃️ 包含卡牌：10 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: Apotheosis.cs
+// ========================================
+public sealed class Apotheosis : CardModel
+{
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlyArray<CardKeyword>(new CardKeyword[2]
+	{
+		CardKeyword.Exhaust,
+		CardKeyword.Innate
+	});
+
+	public Apotheosis()
+		: base(2, CardType.Skill, CardRarity.Ancient, TargetType.Self)
+	{
+	}
+
+	protected override Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		foreach (CardModel allCard in base.Owner.PlayerCombatState.AllCards)
+		{
+			if (allCard != this && allCard.IsUpgradable)
+			{
+				CardCmd.Upgrade(allCard);
+			}
+		}
+		return Task.CompletedTask;
+	}
+
+	protected override void OnUpgrade()
+	{
+		base.EnergyCost.UpgradeBy(-1);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: BeatDown.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(3));
+
+	public BeatDown()
+		: base(3, CardType.Skill, CardRarity.Rare, TargetType.RandomEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		CardPile pile = PileType.Discard.GetPile(base.Owner);
+		IEnumerable<CardModel> enumerable = pile.Cards.Where((CardModel c) => c.Type == CardType.Attack && !c.Keywords.Contains(CardKeyword.Unplayable)).ToList().StableShuffle(base.Owner.RunState.Rng.Shuffle)
+			.Take(base.DynamicVars.Cards.IntValue);
+		foreach (CardModel item in enumerable)
+		{
+			if (!CombatManager.Instance.IsOverOrEnding)
+			{
+				if (item.TargetType == TargetType.AnyEnemy)
+				{
+					Creature target = base.Owner.RunState.Rng.CombatTargets.NextItem(base.CombatState.HittableEnemies);
+					await CardCmd.AutoPlay(choiceContext, item, target);
+				}
+
+// ========================================
+// 文件名: BouncingFlask.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new PowerVar<PoisonPower>(3m),
+		new RepeatVar(3)
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<PoisonPower>());
+
+	public BouncingFlask()
+		: base(2, CardType.Skill, CardRarity.Uncommon, TargetType.RandomEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		Vector2 lastPos = Vector2.Zero;
+		for (int i = 0; i < base.DynamicVars.Repeat.IntValue; i++)
+		{
+			Creature enemy = base.Owner.RunState.Rng.CombatTargets.NextItem(base.CombatState.HittableEnemies);
+			if (enemy == null)
+			{
+				continue;
+			}
+
+// ========================================
+// 文件名: Catastrophe.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(2));
+
+	public Catastrophe()
+		: base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		for (int i = 0; i < base.DynamicVars.Cards.IntValue; i++)
+		{
+			CardModel cardModel = PileType.Draw.GetPile(base.Owner).Cards.Where((CardModel c) => !c.Keywords.Contains(CardKeyword.Unplayable)).ToList().StableShuffle(base.Owner.RunState.Rng.Shuffle)
+				.FirstOrDefault();
+			if (cardModel == null)
+			{
+				cardModel = PileType.Draw.GetPile(base.Owner).Cards.ToList().StableShuffle(base.Owner.RunState.Rng.Shuffle).FirstOrDefault();
+			}
+
+// ========================================
+// 文件名: Chaos.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new RepeatVar(1));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.Static(StaticHoverTip.Channeling));
+
+	public Chaos()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		for (int i = 0; i < base.DynamicVars.Repeat.IntValue; i++)
+		{
+			await OrbCmd.Channel(choiceContext, OrbModel.GetRandomOrb(base.Owner.RunState.Rng.CombatOrbGeneration).ToMutable(), base.Owner);
+		}
+
+// ========================================
+// 文件名: Charge.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(2));
+
+	public Charge()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		List<CardModel> cardsIn = (from c in PileType.Draw.GetPile(base.Owner).Cards
+			orderby c.Rarity, c.Id
+			select c).ToList();
+		List<CardModel> list = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, new CardSelectorPrefs(CardSelectorPrefs.TransformSelectionPrompt, base.DynamicVars.Cards.IntValue))).ToList();
+		foreach (CardModel item in list)
+		{
+			CardPileAddResult? cardPileAddResult = await CardCmd.TransformTo<MinionDiveBomb>(item);
+			if (base.IsUpgraded && cardPileAddResult.HasValue)
+			{
+				CardCmd.Upgrade(cardPileAddResult.Value.cardAdded);
+			}
+
+// ========================================
+// 文件名: Chill.cs
+// ========================================
+public sealed class Chill : CardModel
+{
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlyArray<IHoverTip>(new IHoverTip[2]
+	{
+		HoverTipFactory.Static(StaticHoverTip.Channeling),
+		HoverTipFactory.FromOrb<FrostOrb>()
+	});
+
+	public Chill()
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		IReadOnlyList<Creature> hittableEnemies = base.CombatState.HittableEnemies;
+		foreach (Creature item in hittableEnemies)
+		{
+			_ = item;
+			await OrbCmd.Channel<FrostOrb>(choiceContext, base.Owner);
+		}
+	}
+
+	protected override void OnUpgrade()
+	{
+		RemoveKeyword(CardKeyword.Exhaust);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Claw.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(3m, ValueProp.Move),
+		new DynamicVar("Increase", 2m)
+	});
+
+	public Claw()
+		: base(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitVfxNode((Creature t) => NScratchVfx.Create(t, goingRight: true))
+			.Execute(choiceContext);
+		IEnumerable<Claw> enumerable = base.Owner.PlayerCombatState.AllCards.OfType<Claw>();
+		decimal baseValue = base.DynamicVars["Increase"].BaseValue;
+		foreach (Claw item in enumerable)
+		{
+			item.BuffFromClawPlay(baseValue);
+		}
+
+// ========================================
+// 文件名: Conflagration.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new CalculationBaseVar(8m),
+		new ExtraDamageVar(2m),
+		new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => CombatManager.Instance.History.CardPlaysFinished.Count(delegate(CardPlayFinishedEntry e)
+		{
+			if (!e.HappenedThisTurn(card.CombatState))
+			{
+				return false;
+			}
+			if (e.CardPlay.Card.Type != CardType.Attack)
+			{
+				return false;
+			}
+			return (e.CardPlay.Card.Owner == card.Owner) ? true : false;
+		}))
+	});
+
+	public Conflagration()
+		: base(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		IReadOnlyList<Creature> hittableEnemies = base.CombatState.HittableEnemies;
+		foreach (Creature item in hittableEnemies)
+		{
+			NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NGroundFireVfx.Create(item));
+		}
+
+// ========================================
+// 文件名: ConsumingShadow.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new RepeatVar(2),
+		new PowerVar<ConsumingShadowPower>(1m)
+	});
+
+	public ConsumingShadow()
+		: base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		for (int i = 0; i < base.DynamicVars.Repeat.IntValue; i++)
+		{
+			await OrbCmd.Channel<DarkOrb>(choiceContext, base.Owner);
+		}
+

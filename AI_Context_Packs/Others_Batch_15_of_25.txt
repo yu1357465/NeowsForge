@@ -1,0 +1,193 @@
+// 🎯 机制分类：【Others】
+// 📦 进度批次：第 15 组 (共 25 组)
+// 🗃️ 包含卡牌：10 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: NeutronAegis.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<PlatingPower>(8m));
+
+	public NeutronAegis()
+		: base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await PowerCmd.Apply<PlatingPower>(base.Owner.Creature, base.DynamicVars["PlatingPower"].BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Nostalgia.cs
+// ========================================
+public sealed class Nostalgia : CardModel
+{
+	public Nostalgia()
+		: base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await PowerCmd.Apply<NostalgiaPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+
+	protected override void OnUpgrade()
+	{
+		base.EnergyCost.UpgradeBy(-1);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: NotYet.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new HealVar(10m));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public NotYet()
+		: base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await CreatureCmd.Heal(base.Owner.Creature, base.DynamicVars.Heal.BaseValue);
+	}
+
+// ========================================
+// 文件名: Null.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(10m, ValueProp.Move),
+		new PowerVar<WeakPower>(2m)
+	});
+
+	public Null()
+		: base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		await PowerCmd.Apply<WeakPower>(cardPlay.Target, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
+		await OrbCmd.Channel<DarkOrb>(choiceContext, base.Owner);
+	}
+
+// ========================================
+// 文件名: Oblivion.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<DoomPower>(3m));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<DoomPower>());
+
+	public Oblivion()
+		: base(0, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<OblivionPower>(cardPlay.Target, base.DynamicVars.Doom.BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Orbit.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new EnergyVar(1));
+
+	public Orbit()
+		: base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<OrbitPower>(base.Owner.Creature, base.DynamicVars.Energy.BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Outbreak.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new PowerVar<OutbreakPower>(11m),
+		new RepeatVar(3)
+	});
+
+	public Outbreak()
+		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await PowerCmd.Apply<OutbreakPower>(base.Owner.Creature, base.DynamicVars["OutbreakPower"].BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Outmaneuver.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new EnergyVar(2));
+
+	public Outmaneuver()
+		: base(1, CardType.Skill, CardRarity.Event, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await PowerCmd.Apply<EnergyNextTurnPower>(base.Owner.Creature, base.DynamicVars.Energy.IntValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Parry.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<ParryPower>(10m));
+
+	public Parry()
+		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<ParryPower>(base.Owner.Creature, base.DynamicVars["ParryPower"].BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Patter.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new BlockVar(9m, ValueProp.Move),
+		new PowerVar<VigorPower>(2m)
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<VigorPower>());
+
+	public Patter()
+		: base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<VigorPower>(base.Owner.Creature, base.DynamicVars["VigorPower"].IntValue, base.Owner.Creature, this);
+	}
+

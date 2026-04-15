@@ -1,0 +1,325 @@
+// 🎯 机制分类：【Deck_Manipulation】
+// 📦 进度批次：第 4 组 (共 12 组)
+// 🗃️ 包含卡牌：10 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: Discovery.cs
+// ========================================
+public sealed class Discovery : CardModel
+{
+	private CardModel? _mockSelectedCard;
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public Discovery()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		CardModel cardModel;
+		if (_mockSelectedCard == null)
+		{
+			List<CardModel> cards = CardFactory.GetDistinctForCombat(base.Owner, base.Owner.Character.CardPool.GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint), 3, base.Owner.RunState.Rng.CombatCardGeneration).ToList();
+			cardModel = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards, base.Owner, canSkip: true);
+		}
+		else
+		{
+			cardModel = _mockSelectedCard;
+		}
+		if (cardModel != null)
+		{
+			cardModel.SetToFreeThisTurn();
+			await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+		}
+	}
+
+	protected override void OnUpgrade()
+	{
+		RemoveKeyword(CardKeyword.Exhaust);
+	}
+
+	public void MockSelectedCard(CardModel card)
+	{
+		AssertMuta
+...(内容已截断)
+
+// ========================================
+// 文件名: Distraction.cs
+// ========================================
+public sealed class Distraction : CardModel
+{
+	public override CardPoolModel VisualCardPool => ModelDb.CardPool<SilentCardPool>();
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public Distraction()
+		: base(1, CardType.Skill, CardRarity.Event, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		CardModel cardModel = CardFactory.GetDistinctForCombat(base.Owner, from c in base.Owner.Character.CardPool.GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint)
+			where c.Type == CardType.Skill
+			select c, 1, base.Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
+		if (cardModel != null)
+		{
+			cardModel.SetToFreeThisTurn();
+			await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+		}
+	}
+
+	protected override void OnUpgrade()
+	{
+		base.EnergyCost.UpgradeBy(-1);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Doubt.cs
+// ========================================
+public sealed class Doubt : CardModel
+{
+	public override int MaxUpgradeLevel => 0;
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Unplayable);
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<WeakPower>());
+
+	protected override IEnumerable<DynamicVar> CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<WeakPower>(1m));
+
+	public override bool HasTurnEndInHandEffect => true;
+
+	public Doubt()
+		: base(-1, CardType.Curse, CardRarity.Curse, TargetType.None)
+	{
+	}
+
+	public override async Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
+	{
+		bool alreadyHasWeak = base.Owner.Creature.HasPower<WeakPower>();
+		PowerModel powerModel = await PowerCmd.Apply<WeakPower>(base.Owner.Creature, base.DynamicVars.Weak.BaseValue, null, this);
+		if (powerModel != null && !alreadyHasWeak)
+		{
+			powerModel.SkipNextDurationTick = true;
+		}
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Dredge.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(3));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public Dredge()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		int num = Math.Min(base.DynamicVars.Cards.IntValue, 10 - PileType.Hand.GetPile(base.Owner).Cards.Count);
+		if (num > 0)
+		{
+			await CardPileCmd.Add(await CardSelectCmd.FromSimpleGrid(choiceContext, PileType.Discard.GetPile(base.Owner).Cards, base.Owner, new CardSelectorPrefs(base.SelectionScreenPrompt, num)), PileType.Hand);
+		}
+
+// ========================================
+// 文件名: DualWield.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(1));
+
+	public override CardPoolModel VisualCardPool => ModelDb.CardPool<IroncladCardPool>();
+
+	public DualWield()
+		: base(1, CardType.Skill, CardRarity.Event, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		CardModel selection = (await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(base.SelectionScreenPrompt, 1), context: choiceContext, player: base.Owner, filter: delegate(CardModel c)
+		{
+			CardType type = c.Type;
+			return (type == CardType.Attack || type == CardType.Power) ? true : false;
+		}
+
+// ========================================
+// 文件名: Eidolon.cs
+// ========================================
+public sealed class Eidolon : CardModel
+{
+	private const int _intangibleThreshold = 9;
+
+	protected override bool ShouldGlowGoldInternal
+	{
+		get
+		{
+			PlayerCombatState? playerCombatState = base.Owner.PlayerCombatState;
+			if (playerCombatState == null)
+			{
+				return false;
+			}
+			return playerCombatState.Hand.Cards.Count > 9;
+		}
+	}
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlyArray<IHoverTip>(new IHoverTip[2]
+	{
+		HoverTipFactory.FromKeyword(CardKeyword.Exhaust),
+		HoverTipFactory.FromPower<IntangiblePower>()
+	});
+
+	public Eidolon()
+		: base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		List<CardModel> list = base.Owner.PlayerCombatState.Hand.Cards.ToList();
+		int exhaustedCount = 0;
+		foreach (CardModel item in list)
+		{
+			await CardCmd.Exhaust(choiceContext, item);
+			exhaustedCount++;
+		}
+		if (exhaustedCount >= 9)
+		{
+			await PowerCmd.Apply<IntangiblePower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+		}
+	}
+...(内容已截断)
+
+// ========================================
+// 文件名: Enlightenment.cs
+// ========================================
+public sealed class Enlightenment : CardModel
+{
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public Enlightenment()
+		: base(0, CardType.Skill, CardRarity.Event, TargetType.Self)
+	{
+	}
+
+	protected override Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		foreach (CardModel card in PileType.Hand.GetPile(base.Owner).Cards)
+		{
+			if (base.IsUpgraded)
+			{
+				card.EnergyCost.SetThisCombat(1, reduceOnly: true);
+			}
+			else
+			{
+				card.EnergyCost.SetThisTurnOrUntilPlayed(1, reduceOnly: true);
+			}
+		}
+		return Task.CompletedTask;
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Enthralled.cs
+// ========================================
+public sealed class Enthralled : CardModel
+{
+	public override bool CanBeGeneratedByModifiers => false;
+
+	protected override bool ShouldGlowRedInternal => true;
+
+	public override int MaxUpgradeLevel => 0;
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Eternal);
+
+	public Enthralled()
+		: base(2, CardType.Curse, CardRarity.Curse, TargetType.None)
+	{
+	}
+
+	public override bool ShouldPlay(CardModel card, AutoPlayType autoPlayType)
+	{
+		if (card.Owner != base.Owner)
+		{
+			return true;
+		}
+		CardPile? pile = base.Pile;
+		if (pile == null || pile.Type != PileType.Hand)
+		{
+			return true;
+		}
+		if (card is Enthralled)
+		{
+			return true;
+		}
+		if (autoPlayType != AutoPlayType.None)
+		{
+			return true;
+		}
+		return false;
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Equilibrium.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new BlockVar(13m, ValueProp.Move),
+		new DynamicVar("Equilibrium", 1m)
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromKeyword(CardKeyword.Retain));
+
+	public Equilibrium()
+		: base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
+		await PowerCmd.Apply<RetainHandPower>(base.Owner.Creature, base.DynamicVars["Equilibrium"].BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: ExpectAFight.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[4]
+	{
+		new EnergyVar(0),
+		new CalculationBaseVar(0m),
+		new CalculationExtraVar(1m),
+		new CalculatedVar("CalculatedEnergy").WithMultiplier((CardModel card, Creature? _) => PileType.Hand.GetPile(card.Owner).Cards.Count((CardModel c) => c.Type == CardType.Attack))
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(base.EnergyHoverTip);
+
+	public ExpectAFight()
+		: base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PlayerCmd.GainEnergy(((CalculatedVar)base.DynamicVars["CalculatedEnergy"]).Calculate(cardPlay.Target), base.Owner);
+		await PowerCmd.Apply<NoEnergyGainPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+

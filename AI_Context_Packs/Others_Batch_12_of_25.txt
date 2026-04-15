@@ -1,0 +1,212 @@
+// 🎯 机制分类：【Others】
+// 📦 进度批次：第 12 组 (共 25 组)
+// 🗃️ 包含卡牌：10 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: Ignition.cs
+// ========================================
+public sealed class Ignition : CardModel
+{
+	public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlyArray<IHoverTip>(new IHoverTip[2]
+	{
+		HoverTipFactory.Static(StaticHoverTip.Channeling),
+		HoverTipFactory.FromOrb<PlasmaOrb>()
+	});
+
+	public Ignition()
+		: base(1, CardType.Skill, CardRarity.Rare, TargetType.AnyAlly)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await OrbCmd.Channel<PlasmaOrb>(choiceContext, cardPlay.Target.Player);
+	}
+
+	protected override void OnUpgrade()
+	{
+		RemoveKeyword(CardKeyword.Exhaust);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Impervious.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new BlockVar(30m, ValueProp.Move));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public Impervious()
+		: base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
+	}
+
+// ========================================
+// 文件名: Inferno.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<InfernoPower>(6m));
+
+	public Inferno()
+		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		(await PowerCmd.Apply<InfernoPower>(base.Owner.Creature, base.DynamicVars["InfernoPower"].BaseValue, base.Owner.Creature, this))?.IncrementSelfDamage();
+	}
+
+// ========================================
+// 文件名: InfiniteBlades.cs
+// ========================================
+public sealed class InfiniteBlades : CardModel
+{
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromCard<Shiv>());
+
+	public InfiniteBlades()
+		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<InfiniteBladesPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+
+	protected override void OnUpgrade()
+	{
+		AddKeyword(CardKeyword.Innate);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Inflame.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<StrengthPower>(2m));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<StrengthPower>());
+
+	protected override IEnumerable<string> ExtraRunAssetPaths => NGroundFireVfx.AssetPaths;
+
+	public Inflame()
+		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		NPowerUpVfx.CreateNormal(base.Owner.Creature);
+		await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, base.DynamicVars["StrengthPower"].BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Injury.cs
+// ========================================
+public sealed class Injury : CardModel
+{
+	public override int MaxUpgradeLevel => 0;
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Unplayable);
+
+	public Injury()
+		: base(-1, CardType.Curse, CardRarity.Curse, TargetType.None)
+	{
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Intercept.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new BlockVar(9m, ValueProp.Move));
+
+	public Intercept()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyAlly)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
+		await PowerCmd.Apply<CoveredPower>(cardPlay.Target, 1m, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Invoke.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new SummonVar(2m),
+		new EnergyVar(2)
+	});
+
+	public Invoke()
+		: base(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<SummonNextTurnPower>(base.Owner.Creature, base.DynamicVars.Summon.IntValue, base.Owner.Creature, this);
+		await PowerCmd.Apply<EnergyNextTurnPower>(base.Owner.Creature, base.DynamicVars.Energy.IntValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: IronWave.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(5m, ValueProp.Move),
+		new BlockVar(5m, ValueProp.Move)
+	});
+
+	public IronWave()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_flying_slash")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: Iteration.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<IterationPower>(2m));
+
+	public Iteration()
+		: base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await PowerCmd.Apply<IterationPower>(base.Owner.Creature, base.DynamicVars["IterationPower"].BaseValue, base.Owner.Creature, this);
+	}
+

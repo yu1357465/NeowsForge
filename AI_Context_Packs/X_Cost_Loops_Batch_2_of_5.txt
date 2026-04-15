@@ -1,0 +1,267 @@
+// 🎯 机制分类：【X_Cost_Loops】
+// 📦 进度批次：第 2 组 (共 5 组)
+// 🗃️ 包含卡牌：10 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: CrushUnder.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(7m, ValueProp.Move),
+		new DynamicVar("StrengthLoss", 1m)
+	});
+
+	public CrushUnder()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.AttackAnimDelay);
+		IReadOnlyList<Creature> enemies = base.CombatState.HittableEnemies;
+		foreach (Creature item in enemies)
+		{
+			NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(item));
+		}
+
+// ========================================
+// 文件名: DaggerSpray.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(4m, ValueProp.Move));
+
+	public DaggerSpray()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		SfxCmd.Play("event:/sfx/characters/silent/silent_dagger_spray");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(2).FromCard(this)
+			.TargetingAllOpponents(base.CombatState)
+			.WithAttackerFx(() => NDaggerSprayFlurryVfx.Create(base.Owner.Creature, new Color("#b1ccca"), goingRight: true))
+			.BeforeDamage(delegate
+			{
+				IReadOnlyList<Creature> hittableEnemies = base.CombatState.HittableEnemies;
+				foreach (Creature item in hittableEnemies)
+				{
+					NDaggerSprayImpactVfx child = NDaggerSprayImpactVfx.Create(item, new Color("#b1ccca"), goingRight: true);
+					NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(child);
+				}
+
+// ========================================
+// 文件名: Darkness.cs
+// ========================================
+public sealed class Darkness : CardModel
+{
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlyArray<IHoverTip>(new IHoverTip[2]
+	{
+		HoverTipFactory.Static(StaticHoverTip.Channeling),
+		HoverTipFactory.FromOrb<DarkOrb>()
+	});
+
+	public Darkness()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await OrbCmd.Channel<DarkOrb>(choiceContext, base.Owner);
+		IEnumerable<OrbModel> enumerable = base.Owner.PlayerCombatState.OrbQueue.Orbs.Where((OrbModel orb) => orb is DarkOrb);
+		int triggerCount = ((!base.IsUpgraded) ? 1 : 2);
+		foreach (OrbModel darknessOrb in enumerable)
+		{
+			for (int i = 0; i < triggerCount; i++)
+			{
+				await OrbCmd.Passive(choiceContext, darknessOrb, null);
+			}
+		}
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: DeathsDoor.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new BlockVar(6m, ValueProp.Move),
+		new RepeatVar(2)
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<DoomPower>());
+
+	private bool WasDoomAppliedThisTurn => CombatManager.Instance.History.Entries.OfType<PowerReceivedEntry>().Any((PowerReceivedEntry e) => e.HappenedThisTurn(base.CombatState) && e.Power is DoomPower && e.Applier == base.Owner.Creature);
+
+	public DeathsDoor()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		int blockGains = 1;
+		if (WasDoomAppliedThisTurn)
+		{
+			blockGains += base.DynamicVars.Repeat.IntValue;
+		}
+
+// ========================================
+// 文件名: Dirge.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new SummonVar(3m));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlyArray<IHoverTip>(new IHoverTip[2]
+	{
+		HoverTipFactory.Static(StaticHoverTip.SummonDynamic, base.DynamicVars.Summon),
+		HoverTipFactory.FromCard<Soul>(base.IsUpgraded)
+	});
+
+	public Dirge()
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		int xValue = ResolveEnergyXValue();
+		for (int i = 0; i < xValue; i++)
+		{
+			await OstyCmd.Summon(choiceContext, base.Owner, base.DynamicVars.Summon.BaseValue, this);
+		}
+
+// ========================================
+// 文件名: DrainPower.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(10m, ValueProp.Move),
+		new CardsVar(2)
+	});
+
+	public DrainPower()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		IEnumerable<CardModel> enumerable = PileType.Discard.GetPile(base.Owner).Cards.Where((CardModel c) => c.IsUpgradable).TakeRandom(base.DynamicVars.Cards.IntValue, base.Owner.RunState.Rng.CombatCardSelection);
+		foreach (CardModel item in enumerable)
+		{
+			CardCmd.Upgrade(item);
+			CardCmd.Preview(item);
+		}
+
+// ========================================
+// 文件名: DyingStar.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(9m, ValueProp.Move),
+		new DynamicVar("StrengthLoss", 9m)
+	});
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Ethereal);
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<StrengthPower>());
+
+	public DyingStar()
+		: base(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Attack", base.Owner.Character.AttackAnimDelay);
+		IReadOnlyList<Creature> enemies = base.CombatState.HittableEnemies;
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(base.CombatState)
+			.WithHitFx("vfx/vfx_starry_impact")
+			.SpawningHitVfxOnEachCreature()
+			.Execute(choiceContext);
+		foreach (Creature enemy in enemies)
+		{
+			await PowerCmd.Apply<DyingStarPower>(enemy, base.DynamicVars["StrengthLoss"].BaseValue, base.Owner.Creature, this);
+			VfxCmd.PlayOnCreature(enemy, "vfx/vfx_attack_slash");
+		}
+
+// ========================================
+// 文件名: EndOfDays.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<DoomPower>(29m));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<DoomPower>());
+
+	public EndOfDays()
+		: base(3, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		Vector2? sideCenterFloor = VfxCmd.GetSideCenterFloor(CombatSide.Enemy, base.CombatState);
+		if (sideCenterFloor.HasValue)
+		{
+			NLargeMagicMissileVfx nLargeMagicMissileVfx = NLargeMagicMissileVfx.Create(sideCenterFloor.Value, new Color("8c2447"));
+			if (nLargeMagicMissileVfx != null)
+			{
+				NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(nLargeMagicMissileVfx);
+				await Cmd.Wait(nLargeMagicMissileVfx.WaitTime);
+			}
+
+// ========================================
+// 文件名: EnergySurge.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new EnergyVar(2));
+
+	public EnergySurge()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AllAllies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		IEnumerable<Creature> enumerable = from c in base.CombatState.GetTeammatesOf(base.Owner.Creature)
+			where c != null && c.IsAlive && c.IsPlayer
+			select c;
+		foreach (Creature item in enumerable)
+		{
+			await PlayerCmd.GainEnergy(base.DynamicVars.Energy.IntValue, item.Player);
+		}
+
+// ========================================
+// 文件名: EvilEye.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new BlockVar(8m, ValueProp.Move));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromKeyword(CardKeyword.Exhaust));
+
+	private bool WasCardExhaustedThisTurn => CombatManager.Instance.History.Entries.OfType<CardExhaustedEntry>().Any((CardExhaustedEntry e) => e.HappenedThisTurn(base.CombatState) && e.Card.Owner == base.Owner);
+
+	public EvilEye()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		VfxCmd.PlayOnCreatureCenter(base.Owner.Creature, "vfx/vfx_gaze");
+		int blockGains = ((!WasCardExhaustedThisTurn) ? 1 : 2);
+		for (int i = 0; i < blockGains; i++)
+		{
+			await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
+		}
+

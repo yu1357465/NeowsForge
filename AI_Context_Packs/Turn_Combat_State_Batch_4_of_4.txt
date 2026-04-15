@@ -1,0 +1,201 @@
+// 🎯 机制分类：【Turn_Combat_State】
+// 📦 进度批次：第 4 组 (共 4 组)
+// 🗃️ 包含卡牌：9 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: SevenStars.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(7m, ValueProp.Move),
+		new RepeatVar(7)
+	});
+
+	public SevenStars()
+		: base(2, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(base.DynamicVars.Repeat.IntValue).FromCard(this)
+			.TargetingAllOpponents(base.CombatState)
+			.WithHitFx("vfx/vfx_starry_impact", null, "slash_attack.mp3")
+			.SpawningHitVfxOnEachCreature()
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: Sow.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(8m, ValueProp.Move));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Retain);
+
+	public Sow()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(base.CombatState)
+			.WithHitFx("vfx/vfx_attack_blunt", null, "heavy_attack.mp3")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: Spite.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(5m, ValueProp.Move),
+		new RepeatVar(2)
+	});
+
+	public Spite()
+		: base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		int hitCount = ((!LostHpThisTurn(base.Owner.Creature)) ? 1 : base.DynamicVars.Repeat.IntValue);
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(hitCount).FromCard(this)
+			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: Stardust.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(5m, ValueProp.Move));
+
+	public Stardust()
+		: base(0, CardType.Attack, CardRarity.Uncommon, TargetType.RandomEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(ResolveStarXValue()).FromCard(this)
+			.TargetingRandomOpponents(base.CombatState)
+			.WithHitFx("vfx/vfx_starry_impact")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: SwordBoomerang.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(3m, ValueProp.Move),
+		new RepeatVar(3)
+	});
+
+	public SwordBoomerang()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.RandomEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(base.DynamicVars.Repeat.IntValue).FromCard(this)
+			.TargetingRandomOpponents(base.CombatState)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: Synchronize.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new CalculationBaseVar(0m),
+		new CalculationExtraVar(2m),
+		new CalculatedVar("CalculatedFocus").WithMultiplier((CardModel card, Creature? _) => (from orb in card.Owner.PlayerCombatState.OrbQueue.Orbs
+			group orb by orb.Id).Count())
+	});
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public Synchronize()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<SynchronizePower>(base.Owner.Creature, ((CalculatedVar)base.DynamicVars["CalculatedFocus"]).Calculate(cardPlay.Target), base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Thunderclap.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(4m, ValueProp.Move),
+		new PowerVar<VulnerablePower>(1m)
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<VulnerablePower>());
+
+	public Thunderclap()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(base.CombatState)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		await PowerCmd.Apply<VulnerablePower>(base.CombatState.HittableEnemies, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Turbo.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new EnergyVar(2));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlyArray<IHoverTip>(new IHoverTip[2]
+	{
+		base.EnergyHoverTip,
+		HoverTipFactory.FromCard<Void>()
+	});
+
+	public Turbo()
+		: base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await PlayerCmd.GainEnergy(base.DynamicVars.Energy.IntValue, base.Owner);
+		CardModel card = base.CombatState.CreateCard<Void>(base.Owner);
+		CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Discard, addedByPlayer: true));
+		await Cmd.Wait(0.5f);
+	}
+
+// ========================================
+// 文件名: Volley.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(10m, ValueProp.Move));
+
+	public Volley()
+		: base(0, CardType.Attack, CardRarity.Uncommon, TargetType.RandomEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(ResolveEnergyXValue()).FromCard(this)
+			.TargetingRandomOpponents(base.CombatState)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+	}
+

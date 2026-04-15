@@ -1,0 +1,239 @@
+// 🎯 机制分类：【Deck_Manipulation】
+// 📦 进度批次：第 8 组 (共 12 组)
+// 🗃️ 包含卡牌：9 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: NeowsFury.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(10m, ValueProp.Move),
+		new CardsVar(2)
+	});
+
+	public NeowsFury()
+		: base(1, CardType.Attack, CardRarity.Ancient, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		IEnumerable<CardModel> enumerable = PileType.Discard.GetPile(base.Owner).Cards.TakeRandom(base.DynamicVars.Cards.IntValue, base.Owner.RunState.Rng.CombatCardSelection);
+		foreach (CardModel item in enumerable)
+		{
+			await CardPileCmd.Add(item, PileType.Hand);
+		}
+
+// ========================================
+// 文件名: Nightmare.cs
+// ========================================
+public sealed class Nightmare : CardModel
+{
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	protected override IEnumerable<string> ExtraRunAssetPaths => NNightmareHandsVfx.AssetPaths;
+
+	public Nightmare()
+		: base(3, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		if (TestMode.IsOff)
+		{
+			NSmokyVignetteVfx child = NSmokyVignetteVfx.Create(new Color(0.8f, 0.3f, 0.8f, 0.66f), new Color(0f, 0f, 4f, 0.33f));
+			NGame.Instance.CurrentRunNode.GlobalUi.AddChildSafely(child);
+			NGame.Instance.CurrentRunNode.GlobalUi.AddChildSafely(NNightmareHandsVfx.Create());
+			await Cmd.CustomScaledWait(0.1f, 0.25f);
+		}
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		CardModel selectedCard = (await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(base.SelectionScreenPrompt, 1), context: choiceContext, player: base.Owner, filter: null, source: this)).FirstOrDefault();
+		if (selectedCard != null)
+		{
+			(await PowerCmd.Apply<NightmarePower>(b
+...(内容已截断)
+
+// ========================================
+// 文件名: Normality.cs
+// ========================================
+public sealed class Normality : CardModel
+{
+	private const int _numOfCardsPerTurn = 3;
+
+	private const string _calculatedCardsKey = "CalculatedCards";
+
+	protected override bool ShouldGlowRedInternal => ShouldPreventCardPlay;
+
+	private bool ShouldPreventCardPlay => CardsPlayedThisTurn >= 3;
+
+	public override int MaxUpgradeLevel => 0;
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Unplayable);
+
+	protected override IEnumerable<DynamicVar> CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new CalculationBaseVar(3m),
+		new CalculationExtraVar(-1m),
+		new CalculatedVar("CalculatedCards").WithMultiplier((CardModel card, Creature? _) => Math.Min(3, ((Normality)card).CardsPlayedThisTurn))
+	});
+
+	private int CardsPlayedThisTurn => CombatManager.Instance.History.CardPlaysStarted.Count((CardPlayStartedEntry e) => e.HappenedThisTurn(base.CombatState) && e.CardPlay.Card.Owner == base.Owner);
+
+	public Normality()
+		: base(-1, CardType.Curse, CardRarity.Curse, TargetType.None)
+	{
+	}
+
+	public override bool ShouldPlay(CardModel card, AutoPlayType _)
+	{
+		if (card.Owne
+...(内容已截断)
+
+// ========================================
+// 文件名: ParticleWall.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new BlockVar(9m, ValueProp.Move));
+
+	public ParticleWall()
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
+		await Cmd.Wait(0.25f);
+	}
+
+// ========================================
+// 文件名: PhotonCut.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new DamageVar(10m, ValueProp.Move),
+		new CardsVar(1),
+		new DynamicVar("PutBack", 1m)
+	});
+
+	public PhotonCut()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash", null, "dagger_throw.mp3")
+			.Execute(choiceContext);
+		await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
+		await CardPileCmd.Add(await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(base.SelectionScreenPrompt, base.DynamicVars["PutBack"].IntValue), context: choiceContext, player: base.Owner, filter: null, source: this), PileType.Draw, CardPilePosition.Top);
+	}
+
+// ========================================
+// 文件名: Pillage.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(6m, ValueProp.Move));
+
+	public Pillage()
+		: base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		CardModel cardModel;
+		do
+		{
+			cardModel = await CardPileCmd.Draw(choiceContext, base.Owner);
+		}
+
+// ========================================
+// 文件名: PreciseCut.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new CalculationBaseVar(13m),
+		new ExtraDamageVar(2m),
+		new CalculatedDamageVar(ValueProp.Move).WithMultiplier(delegate(CardModel card, Creature? _)
+		{
+			int num = PileType.Hand.GetPile(card.Owner).Cards.Count;
+			CardPile? pile = card.Pile;
+			if (pile != null && pile.Type == PileType.Hand)
+			{
+				num--;
+			}
+			return -num;
+		})
+	});
+
+	public PreciseCut()
+		: base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.CalculatedDamage).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash", null, "dagger_throw.mp3")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: Prepared.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(1));
+
+	public Prepared()
+		: base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		int cardCount = base.DynamicVars.Cards.IntValue;
+		await CardPileCmd.Draw(choiceContext, cardCount, base.Owner);
+		await CardCmd.Discard(choiceContext, await CardSelectCmd.FromHandForDiscard(choiceContext, base.Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, cardCount), null, this));
+	}
+
+// ========================================
+// 文件名: PrimalForce.cs
+// ========================================
+public sealed class PrimalForce : CardModel
+{
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromCard<GiantRock>(base.IsUpgraded));
+
+	public PrimalForce()
+		: base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		List<CardModel> list = PileType.Hand.GetPile(base.Owner).Cards.Where((CardModel c) => c != null && c.IsTransformable && c.Type == CardType.Attack).ToList();
+		foreach (CardModel item in list)
+		{
+			CardModel cardModel = base.CombatState.CreateCard<GiantRock>(base.Owner);
+			if (base.IsUpgraded)
+			{
+				CardCmd.Upgrade(cardModel);
+			}
+			await CardCmd.Transform(item, cardModel);
+		}
+	}
+}
+
+...(内容已截断)
+

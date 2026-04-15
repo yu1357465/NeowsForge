@@ -1,0 +1,231 @@
+// 🎯 机制分类：【X_Cost_Loops】
+// 📦 进度批次：第 5 组 (共 5 组)
+// 🗃️ 包含卡牌：9 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: Refract.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new RepeatVar(2),
+		new DamageVar(9m, ValueProp.Move)
+	});
+
+	public Refract()
+		: base(3, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(2).FromCard(this)
+			.OnlyPlayAnimOnce()
+			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		for (int i = 0; i < base.DynamicVars.Repeat.IntValue; i++)
+		{
+			await OrbCmd.Channel<GlassOrb>(choiceContext, base.Owner);
+		}
+
+// ========================================
+// 文件名: Resonance.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<StrengthPower>(1m));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<StrengthPower>());
+
+	public Resonance()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		int intValue = base.DynamicVars["StrengthPower"].IntValue;
+		await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, intValue, base.Owner.Creature, this);
+		foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
+		{
+			await PowerCmd.Apply<StrengthPower>(hittableEnemy, -1m, base.Owner.Creature, this);
+		}
+
+// ========================================
+// 文件名: Seance.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(1));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Ethereal);
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromCard<Soul>());
+
+	public Seance()
+		: base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		List<CardModel> cardsIn = (from c in PileType.Draw.GetPile(base.Owner).Cards
+			orderby c.Rarity, c.Id
+			select c).ToList();
+		List<CardModel> list = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, new CardSelectorPrefs(CardSelectorPrefs.TransformSelectionPrompt, base.DynamicVars.Cards.IntValue))).ToList();
+		foreach (CardModel item in list)
+		{
+			await CardCmd.TransformTo<Soul>(item);
+		}
+
+// ========================================
+// 文件名: Shatter.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(11m, ValueProp.Move));
+
+	public Shatter()
+		: base(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(base.CombatState)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		int orbCount = base.Owner.PlayerCombatState.OrbQueue.Orbs.Count;
+		for (int i = 0; i < orbCount; i++)
+		{
+			await OrbCmd.EvokeNext(choiceContext, base.Owner);
+		}
+
+// ========================================
+// 文件名: Shockwave.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DynamicVar("Power", 3m));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlyArray<IHoverTip>(new IHoverTip[2]
+	{
+		HoverTipFactory.FromPower<WeakPower>(),
+		HoverTipFactory.FromPower<VulnerablePower>()
+	});
+
+	public Shockwave()
+		: base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		VfxCmd.PlayOnCreatureCenter(base.Owner.Creature, "vfx/vfx_flying_slash");
+		int amount = base.DynamicVars["Power"].IntValue;
+		foreach (Creature enemy in base.CombatState.HittableEnemies)
+		{
+			await PowerCmd.Apply<WeakPower>(enemy, amount, base.Owner.Creature, this);
+			await PowerCmd.Apply<VulnerablePower>(enemy, amount, base.Owner.Creature, this);
+		}
+
+// ========================================
+// 文件名: Stomp.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(12m, ValueProp.Move));
+
+	public Stomp()
+		: base(3, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.AttackAnimDelay);
+		foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
+		{
+			NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NSpikeSplashVfx.Create(hittableEnemy));
+		}
+
+// ========================================
+// 文件名: Tempest.cs
+// ========================================
+public sealed class Tempest : CardModel
+{
+	protected override bool HasEnergyCostX => true;
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlyArray<IHoverTip>(new IHoverTip[2]
+	{
+		HoverTipFactory.Static(StaticHoverTip.Channeling),
+		HoverTipFactory.FromOrb<LightningOrb>()
+	});
+
+	public Tempest()
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		int numOfOrbs = ResolveEnergyXValue();
+		if (base.IsUpgraded)
+		{
+			numOfOrbs++;
+		}
+		for (int i = 0; i < numOfOrbs; i++)
+		{
+			await OrbCmd.Channel<LightningOrb>(choiceContext, base.Owner);
+		}
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: TeslaCoil.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(3m, ValueProp.Move));
+
+	public TeslaCoil()
+		: base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		List<LightningOrb> list = base.Owner.PlayerCombatState.OrbQueue.Orbs.OfType<LightningOrb>().ToList();
+		foreach (LightningOrb item in list)
+		{
+			await OrbCmd.Passive(choiceContext, item, cardPlay.Target);
+		}
+
+// ========================================
+// 文件名: Voltaic.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new CalculationBaseVar(0m),
+		new CalculationExtraVar(1m),
+		new CalculatedVar("CalculatedChannels").WithMultiplier((CardModel card, Creature? _) => CombatManager.Instance.History.Entries.OfType<OrbChanneledEntry>().Count((OrbChanneledEntry e) => e.Actor.Player == card.Owner && e.Orb is LightningOrb))
+	});
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public Voltaic()
+		: base(3, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		int lightningChanneledCount = (int)((CalculatedVar)base.DynamicVars["CalculatedChannels"]).Calculate(cardPlay.Target);
+		for (int i = 0; i < lightningChanneledCount; i++)
+		{
+			await OrbCmd.Channel<LightningOrb>(choiceContext, base.Owner);
+		}
+

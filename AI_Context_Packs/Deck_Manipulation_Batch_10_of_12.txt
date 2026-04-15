@@ -1,0 +1,245 @@
+// 🎯 机制分类：【Deck_Manipulation】
+// 📦 进度批次：第 10 组 (共 12 组)
+// 🗃️ 包含卡牌：9 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: SculptingStrike.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(9m, ValueProp.Move));
+
+	public SculptingStrike()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		CardModel cardModel = (await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(base.SelectionScreenPrompt, 1), context: choiceContext, player: base.Owner, filter: (CardModel c) => !c.Keywords.Contains(CardKeyword.Ethereal), source: this)).FirstOrDefault();
+		if (cardModel != null)
+		{
+			CardCmd.ApplyKeyword(cardModel, CardKeyword.Ethereal);
+		}
+
+// ========================================
+// 文件名: SecondWind.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new BlockVar(5m, ValueProp.Move));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromKeyword(CardKeyword.Exhaust));
+
+	public SecondWind()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		foreach (CardModel item in GetCards().ToList())
+		{
+			await CardCmd.Exhaust(choiceContext, item);
+			await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
+		}
+
+// ========================================
+// 文件名: SecretTechnique.cs
+// ========================================
+public sealed class SecretTechnique : CardModel
+{
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public SecretTechnique()
+		: base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
+		List<CardModel> cardsIn = PileType.Draw.GetPile(base.Owner).Cards.Where((CardModel c) => c.Type == CardType.Skill).ToList();
+		CardModel cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs)).FirstOrDefault();
+		if (cardModel != null)
+		{
+			await CardPileCmd.Add(cardModel, PileType.Hand);
+		}
+	}
+
+	protected override void OnUpgrade()
+	{
+		RemoveKeyword(CardKeyword.Exhaust);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: SecretWeapon.cs
+// ========================================
+public sealed class SecretWeapon : CardModel
+{
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public SecretWeapon()
+		: base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
+		List<CardModel> cardsIn = PileType.Draw.GetPile(base.Owner).Cards.Where((CardModel c) => c.Type == CardType.Attack).ToList();
+		CardModel cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, cardsIn, base.Owner, prefs)).FirstOrDefault();
+		if (cardModel != null)
+		{
+			await CardPileCmd.Add(cardModel, PileType.Hand);
+		}
+	}
+
+	protected override void OnUpgrade()
+	{
+		RemoveKeyword(CardKeyword.Exhaust);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: SeekerStrike.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(9m, ValueProp.Move),
+		new CardsVar(3)
+	});
+
+	public SeekerStrike()
+		: base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		IEnumerable<CardModel> source = PileType.Draw.GetPile(base.Owner).Cards.ToList().StableShuffle(base.Owner.RunState.Rng.CombatCardSelection);
+		CardModel cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, source.Take(base.DynamicVars.Cards.IntValue).ToList(), base.Owner, new CardSelectorPrefs(base.SelectionScreenPrompt, 1))).FirstOrDefault();
+		if (cardModel != null)
+		{
+			await CardPileCmd.Add(cardModel, PileType.Hand);
+		}
+
+// ========================================
+// 文件名: Severance.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(13m, ValueProp.Move));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromCard<Soul>());
+
+	public Severance()
+		: base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		List<Soul> souls = Soul.Create(base.Owner, 3, base.CombatState).ToList();
+		CardPileAddResult drawResult = await CardPileCmd.AddGeneratedCardToCombat(souls[0], PileType.Draw, addedByPlayer: true, CardPilePosition.Random);
+		CardPileAddResult discardResult = await CardPileCmd.AddGeneratedCardToCombat(souls[1], PileType.Discard, addedByPlayer: true);
+		await CardPileCmd.AddGeneratedCardToCombat(souls[2], PileType.Hand, addedByPlayer: true);
+		CardCmd.PreviewCardPileAdd(new global::_003C_003Ez__ReadOnlyArray<CardPileAddResult>(new CardPileAddResult[2] { drawResult, discardResult }
+
+// ========================================
+// 文件名: ShadowStep.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(3));
+
+	public ShadowStep()
+		: base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CardCmd.Discard(choiceContext, PileType.Hand.GetPile(base.Owner).Cards);
+		await PowerCmd.Apply<ShadowStepPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Shame.cs
+// ========================================
+public sealed class Shame : CardModel
+{
+	private const string _frailKey = "Frail";
+
+	public override int MaxUpgradeLevel => 0;
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Unplayable);
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<FrailPower>());
+
+	protected override IEnumerable<DynamicVar> CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DynamicVar("Frail", 1m));
+
+	public override bool HasTurnEndInHandEffect => true;
+
+	public Shame()
+		: base(-1, CardType.Curse, CardRarity.Curse, TargetType.None)
+	{
+	}
+
+	public override async Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
+	{
+		bool alreadyHasFrail = base.Owner.Creature.HasPower<FrailPower>();
+		PowerModel powerModel = await PowerCmd.Apply<FrailPower>(base.Owner.Creature, base.DynamicVars["Frail"].BaseValue, null, this);
+		if (powerModel != null && !alreadyHasFrail)
+		{
+			powerModel.SkipNextDurationTick = true;
+		}
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Shiv.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(4m, ValueProp.Move));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	private bool HasFanOfKnives
+	{
+		get
+		{
+			if (base.IsMutable && base.Owner != null)
+			{
+				return base.Owner.Creature.HasPower<FanOfKnivesPower>();
+			}
+			return false;
+		}
+	}
+
+	public Shiv()
+		: base(0, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		AttackCommand attackCommand = DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this);
+		if (HasFanOfKnives)
+		{
+			Creature lastEnemy = base.CombatState.HittableEnemies.LastOrDefault();
+			attackCommand = attackCommand.TargetingAllOpponents(base.CombatState).WithHitVfxNode((Creature _) => NShivThrowVfx.Create(base.Owner.Creature, lastEnemy, Colors.Green));
+		}
+

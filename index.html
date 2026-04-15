@@ -10,10 +10,13 @@
 <div id="library-panel" class="panel">
     <h2>📦 卡牌总览 (当前显示: <span id="card-count" class="stat-badge">0</span>)</h2>
 
-    <div style="background: #ffffff; border: 1px solid #e0e4d8; border-radius: 8px; padding: 15px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+    <div style="background: #ffffff; border: 1px solid #e0e4d8; border-radius: 8px; padding: 15px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);"
+         ondragover="event.preventDefault()"
+         ondrop="dropToDraft(event)">
+
         <h3 style="margin-top: 0; color: #2c3e50; font-size: 1rem; border-bottom: 1px dashed #e0e4d8; padding-bottom: 8px; display: flex; justify-content: space-between;">
             <span>⚖️ 抓牌推演台 (边际效用 Δ EV)</span>
-            <span style="font-size: 0.8rem; color: #e74c3c; font-weight: bold;">💡 上方右键添加，此处【左键删除 / 右键强化】</span>
+            <span style="font-size: 0.8rem; color: #e74c3c; font-weight: bold;">💡 把卡牌拖拽到此处进行测算</span>
         </h3>
 
         <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;" id="draft-table">
@@ -85,6 +88,17 @@
             </label>
             <button class="action-btn" onclick="loadStarterDeck()">📥 一键载入初始卡组</button>
             <button class="action-btn danger" style="margin-left: auto;" onclick="clearDeck()">🗑️ 清空卡组</button>
+        </div>
+
+        <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px; background: #eef0eb; padding: 10px 15px; border-radius: 8px; border: 1px solid #dcdde1;">
+            <label style="font-weight: bold; color: #2c3e50;">💾 战术存档槽:</label>
+            <select id="save-slot" style="padding: 4px; border-radius: 4px; border: 1px solid #ccc; font-family: inherit;">
+                <option value="slot1">存档 1 (主玩构筑)</option>
+                <option value="slot2">存档 2 (测试构筑A)</option>
+                <option value="slot3">存档 3 (测试构筑B)</option>
+            </select>
+            <button class="action-btn" onclick="saveDeckToLocal()" style="background-color: #27ae60;">写入保存</button>
+            <button class="action-btn" onclick="loadDeckFromLocal()" style="background-color: #8e44ad;">读取覆盖</button>
         </div>
 
         <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; background: #f8f9f6; padding: 10px 15px; border-radius: 8px; border: 1px solid #e0e4d8;">

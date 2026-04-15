@@ -1,0 +1,296 @@
+// 🎯 机制分类：【Deck_Manipulation】
+// 📦 进度批次：第 7 组 (共 12 组)
+// 🗃️ 包含卡牌：9 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: JackOfAllTrades.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(1));
+
+	public JackOfAllTrades()
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override void OnUpgrade()
+	{
+		base.DynamicVars.Cards.UpgradeValueBy(1m);
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		IEnumerable<CardModel> distinctForCombat = CardFactory.GetDistinctForCombat(base.Owner, from c in ModelDb.CardPool<ColorlessCardPool>().GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint)
+			where !(c is JackOfAllTrades)
+			select c, base.DynamicVars.Cards.IntValue, base.Owner.RunState.Rng.CombatCardGeneration);
+		foreach (CardModel item in distinctForCombat.ToList())
+		{
+			await CardPileCmd.AddGeneratedCardToCombat(item, PileType.Hand, addedByPlayer: true);
+		}
+
+// ========================================
+// 文件名: Jackpot.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(25m, ValueProp.Move),
+		new CardsVar(3)
+	});
+
+	public Jackpot()
+		: base(3, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		IEnumerable<CardModel> forCombat = CardFactory.GetForCombat(base.Owner, base.Owner.Character.CardPool.GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint).Where(delegate(CardModel c)
+		{
+			CardEnergyCost energyCost = c.EnergyCost;
+			return energyCost != null && energyCost.Canonical == 0 && !energyCost.CostsX;
+		}
+
+// ========================================
+// 文件名: KinglyKick.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(27m, ValueProp.Move));
+
+	public KinglyKick()
+		: base(4, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash", null, "heavy_attack.mp3")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: KinglyPunch.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(8m, ValueProp.Move),
+		new DynamicVar("Increase", 4m)
+	});
+
+	public KinglyPunch()
+		: base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: Largesse.cs
+// ========================================
+public sealed class Largesse : CardModel
+{
+	public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
+
+	public Largesse()
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.AnyAlly)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		CardModel cardModel = CardFactory.GetDistinctForCombat(cardPlay.Target.Player, ModelDb.CardPool<ColorlessCardPool>().GetUnlockedCards(cardPlay.Target.Player.UnlockState, cardPlay.Target.Player.RunState.CardMultiplayerConstraint), 1, base.Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
+		if (cardModel != null)
+		{
+			if (base.IsUpgraded)
+			{
+				CardCmd.Upgrade(cardModel);
+			}
+			await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+		}
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: LeadingStrike.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new CardsVar("Shivs", 2),
+		new DamageVar(3m, ValueProp.Move)
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromCard<Shiv>());
+
+	public LeadingStrike()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		for (int i = 0; i < base.DynamicVars["Shivs"].IntValue; i++)
+		{
+			await Shiv.CreateInHand(base.Owner, base.CombatState);
+			await Cmd.Wait(0.25f);
+		}
+
+// ========================================
+// 文件名: MadScience.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[11]
+	{
+		new DamageVar(12m, ValueProp.Move),
+		new BlockVar(8m, ValueProp.Move),
+		new PowerVar<WeakPower>("SappingWeak", 2m),
+		new PowerVar<VulnerablePower>("SappingVulnerable", 2m),
+		new DynamicVar("ViolenceHits", 3m),
+		new PowerVar<StranglePower>("ChokingDamage", 6m),
+		new EnergyVar("EnergizedEnergy", 2),
+		new CardsVar("WisdomCards", 3),
+		new PowerVar<StrengthPower>("ExpertiseStrength", 2m),
+		new PowerVar<DexterityPower>("ExpertiseDexterity", 2m),
+		new DynamicVar("CuriousReduction", 1m)
+	});
+
+	[SavedProperty(SerializationCondition.AlwaysSave, -1)]
+	public CardType TinkerTimeType
+	{
+		get
+		{
+			return _tinkerTimeType;
+		}
+		set
+		{
+			AssertMutable();
+			_tinkerTimeType = value;
+		}
+	}
+
+	[SavedProperty(SerializationCondition.SaveIfNotTypeDefault)]
+	public TinkerTime.RiderEffect TinkerTimeRider
+	{
+		get
+		{
+			return _tinkerTimeRider;
+		}
+		set
+		{
+			AssertMutable();
+			_tinkerTimeRider = value;
+		}
+	}
+
+	private CardModel? MockedChaosCard
+	{
+		get
+		{
+			return _mockedChaosCard;
+		}
+		set
+		{
+			AssertMutable();
+			_mockedChaosCard = value;
+		}
+	}
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips
+	{
+		get
+		{
+			if (TinkerTimeRider != TinkerTime.RiderEffect.None)
+			{
+				return TinkerTime.GetRiderHoverTips(TinkerTimeRider);
+			}
+			return Array.Empty<IHoverTip>();
+		}
+	}
+
+	public MadScience()
+		: base(1, CardType.Attack, CardRarity.Event, TargetType.AnyEnemy, shouldShowInCardLibrary: false)
+	{
+	}
+
+	private string GetPortraitPath(CardType cardType)
+	{
+		return ImageHelper.GetImagePath("atlases/card_atlas.sprites/event/" + GetPortraitFilename(cardType) + ".tres");
+	}
+
+	private string GetPortraitFilename(CardType cardType)
+	{
+		return cardType switch
+		{
+			CardType.Attack => "mad_science_attack", 
+			CardType.Skill => "mad_science_skill", 
+			CardType.Power => "mad_science_power", 
+			_ => throw new InvalidOperationException($"Mad Science is invalid type {TinkerTimeType}."), 
+		};
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		if (TargetType == TargetType.AnyEnemy && cardPlay.Target == null)
+		{
+			ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		}
+
+// ========================================
+// 文件名: MakeItSo.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(6m, ValueProp.Move),
+		new CardsVar(3)
+	});
+
+	public MakeItSo()
+		: base(0, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_starry_impact")
+			.Execute(choiceContext);
+	}
+
+// ========================================
+// 文件名: ManifestAuthority.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new BlockVar(7m, ValueProp.Move));
+
+	public ManifestAuthority()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);
+		CardModel cardModel = CardFactory.GetDistinctForCombat(base.Owner, ModelDb.CardPool<ColorlessCardPool>().GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint), 1, base.Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
+		if (cardModel != null)
+		{
+			if (base.IsUpgraded)
+			{
+				CardCmd.Upgrade(cardModel);
+			}
+

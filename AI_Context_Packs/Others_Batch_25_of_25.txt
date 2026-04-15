@@ -1,0 +1,208 @@
+// 🎯 机制分类：【Others】
+// 📦 进度批次：第 25 组 (共 25 组)
+// 🗃️ 包含卡牌：9 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: VoidForm.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<VoidFormPower>(2m));
+
+	public VoidForm()
+		: base(3, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<VoidFormPower>(base.Owner.Creature, base.DynamicVars["VoidFormPower"].BaseValue, base.Owner.Creature, this);
+		PlayerCmd.EndTurn(base.Owner, canBackOut: false);
+	}
+
+// ========================================
+// 文件名: WasteAway.cs
+// ========================================
+public sealed class WasteAway : CardModel, KnowledgeDemon.IChoosable
+{
+	public override bool CanBeGeneratedInCombat => false;
+
+	public override int MaxUpgradeLevel => 0;
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(base.EnergyHoverTip);
+
+	protected override IEnumerable<DynamicVar> CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new PowerVar<WasteAwayPower>(1m));
+
+	public WasteAway()
+		: base(-1, CardType.Status, CardRarity.Status, TargetType.None)
+	{
+	}
+
+	public async Task OnChosen()
+	{
+		await PowerCmd.Apply<WasteAwayPower>(base.Owner.Creature, base.DynamicVars["WasteAwayPower"].IntValue, base.Owner.Creature, this);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Whistle.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(33m, ValueProp.Move));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public Whistle()
+		: base(3, CardType.Attack, CardRarity.Ancient, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		await CreatureCmd.Stun(cardPlay.Target);
+	}
+
+// ========================================
+// 文件名: Wisp.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new EnergyVar(1));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(base.EnergyHoverTip);
+
+	public Wisp()
+		: base(0, CardType.Skill, CardRarity.Common, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await PlayerCmd.GainEnergy(base.DynamicVars.Energy.IntValue, base.Owner);
+	}
+
+// ========================================
+// 文件名: Wound.cs
+// ========================================
+public sealed class Wound : CardModel
+{
+	public override int MaxUpgradeLevel => 0;
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Unplayable);
+
+	public Wound()
+		: base(-1, CardType.Status, CardRarity.Status, TargetType.None)
+	{
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: WraithForm.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new PowerVar<IntangiblePower>(2m),
+		new PowerVar<WraithFormPower>(1m)
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlyArray<IHoverTip>(new IHoverTip[2]
+	{
+		HoverTipFactory.FromPower<IntangiblePower>(),
+		HoverTipFactory.FromPower<DexterityPower>()
+	});
+
+	public WraithForm()
+		: base(3, CardType.Power, CardRarity.Ancient, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await PowerCmd.Apply<IntangiblePower>(base.Owner.Creature, base.DynamicVars["IntangiblePower"].BaseValue, base.Owner.Creature, this);
+		await PowerCmd.Apply<WraithFormPower>(base.Owner.Creature, base.DynamicVars["WraithFormPower"].BaseValue, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Writhe.cs
+// ========================================
+public sealed class Writhe : CardModel
+{
+	public override int MaxUpgradeLevel => 0;
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlyArray<CardKeyword>(new CardKeyword[2]
+	{
+		CardKeyword.Innate,
+		CardKeyword.Unplayable
+	});
+
+	public Writhe()
+		: base(-1, CardType.Curse, CardRarity.Curse, TargetType.None)
+	{
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: WroughtInWar.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(7m, ValueProp.Move),
+		new ForgeVar(7)
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => HoverTipFactory.FromForge();
+
+	public WroughtInWar()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_blunt")
+			.Execute(choiceContext);
+		await ForgeCmd.Forge(base.DynamicVars.Forge.IntValue, base.Owner, this);
+	}
+
+// ========================================
+// 文件名: Zap.cs
+// ========================================
+public sealed class Zap : CardModel
+{
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlyArray<IHoverTip>(new IHoverTip[2]
+	{
+		HoverTipFactory.Static(StaticHoverTip.Channeling),
+		HoverTipFactory.FromOrb<LightningOrb>()
+	});
+
+	public Zap()
+		: base(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		await OrbCmd.Channel<LightningOrb>(choiceContext, base.Owner);
+	}
+
+	protected override void OnUpgrade()
+	{
+		base.EnergyCost.UpgradeBy(-1);
+	}
+}
+
+...(内容已截断)
+

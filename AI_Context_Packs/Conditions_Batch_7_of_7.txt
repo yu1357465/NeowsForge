@@ -1,0 +1,216 @@
+// 🎯 机制分类：【Conditions】
+// 📦 进度批次：第 7 组 (共 7 组)
+// 🗃️ 包含卡牌：8 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: Suppress.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(11m, ValueProp.Move),
+		new PowerVar<WeakPower>(3m)
+	});
+
+	public Suppress()
+		: base(0, CardType.Attack, CardRarity.Ancient, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NThinSliceVfx.Create(cardPlay.Target));
+		float num = base.Owner.Character.AttackAnimDelay;
+		if (SaveManager.Instance.PrefsSave.FastMode == FastModeType.Normal)
+		{
+			num += 0.2f;
+		}
+
+// ========================================
+// 文件名: SweepingBeam.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(6m, ValueProp.Move),
+		new CardsVar(1)
+	});
+
+	public SweepingBeam()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Attack", base.Owner.Character.AttackAnimDelay);
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).TargetingAllOpponents(base.CombatState)
+			.WithAttackerAnim("Cast", 0.5f)
+			.BeforeDamage(async delegate
+			{
+				List<Creature> targets = base.CombatState.HittableEnemies.ToList();
+				NSweepingBeamVfx nSweepingBeamVfx = NSweepingBeamVfx.Create(base.Owner.Creature, targets);
+				if (nSweepingBeamVfx != null)
+				{
+					NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(nSweepingBeamVfx);
+					await Cmd.Wait(0.5f);
+				}
+
+// ========================================
+// 文件名: SweepingGaze.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new OstyDamageVar(10m, ValueProp.Move));
+
+	public SweepingGaze()
+		: base(0, CardType.Attack, CardRarity.Token, TargetType.RandomEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		if (!Osty.CheckMissingWithAnim(base.Owner))
+		{
+			await DamageCmd.Attack(base.DynamicVars.OstyDamage.BaseValue).FromOsty(base.Owner.Osty, this).TargetingRandomOpponents(base.CombatState)
+				.WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
+				.Execute(choiceContext);
+		}
+
+// ========================================
+// 文件名: TheHunt.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(10m, ValueProp.Move));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.Static(StaticHoverTip.Fatal));
+
+	public TheHunt()
+		: base(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		AbstractRoom currentRoom = base.CombatState.RunState.CurrentRoom;
+		if (currentRoom is CombatRoom combatRoom)
+		{
+			ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+			bool shouldTriggerFatal = cardPlay.Target.Powers.All((PowerModel p) => p.ShouldOwnerDeathTriggerFatal());
+			AttackCommand attackCommand = await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+				.WithHitFx("vfx/vfx_attack_slash")
+				.Execute(choiceContext);
+			if (shouldTriggerFatal && attackCommand.Results.Any((DamageResult r) => r.WasTargetKilled))
+			{
+				combatRoom.AddExtraReward(base.Owner, new CardReward(CardCreationOptions.ForRoom(base.Owner, combatRoom.RoomType), 3, base.Owner));
+				await PowerCmd.Apply<TheHuntPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+			}
+
+// ========================================
+// 文件名: Tracking.cs
+// ========================================
+public sealed class Tracking : CardModel
+{
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<WeakPower>());
+
+	public Tracking()
+		: base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		if (base.Owner.Creature.HasPower<TrackingPower>())
+		{
+			await PowerCmd.Apply<TrackingPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+		}
+		else
+		{
+			await PowerCmd.Apply<TrackingPower>(base.Owner.Creature, 2m, base.Owner.Creature, this);
+		}
+	}
+
+	protected override void OnUpgrade()
+	{
+		base.EnergyCost.UpgradeBy(-1);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Unleash.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new CalculationBaseVar(6m),
+		new ExtraDamageVar(1m).FromOsty(),
+		new CalculatedDamageVar(ValueProp.Move).FromOsty().WithMultiplier(delegate(CardModel card, Creature? _)
+		{
+			Creature osty = card.Owner.Osty;
+			return (osty != null && osty.IsAlive) ? osty.CurrentHp : 0;
+		})
+	});
+
+	public Unleash()
+		: base(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		if (!Osty.CheckMissingWithAnim(base.Owner))
+		{
+			await DamageCmd.Attack(base.DynamicVars.CalculatedDamage).FromOsty(base.Owner.Osty, this).Targeting(cardPlay.Target)
+				.WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
+				.Execute(choiceContext);
+		}
+
+// ========================================
+// 文件名: Uproar.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(5m, ValueProp.Move));
+
+	public Uproar()
+		: base(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).WithHitCount(2)
+			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		CardModel cardModel = PileType.Draw.GetPile(base.Owner).Cards.Where((CardModel c) => c.Type == CardType.Attack && !c.Keywords.Contains(CardKeyword.Unplayable)).ToList().StableShuffle(base.Owner.RunState.Rng.Shuffle)
+			.FirstOrDefault();
+		if (cardModel == null)
+		{
+			cardModel = PileType.Draw.GetPile(base.Owner).Cards.Where((CardModel c) => c.Type == CardType.Attack).ToList().StableShuffle(base.Owner.RunState.Rng.Shuffle)
+				.FirstOrDefault();
+		}
+
+// ========================================
+// 文件名: Whirlwind.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(5m, ValueProp.Move));
+
+	public Whirlwind()
+		: base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		int num = ResolveEnergyXValue();
+		if (num > 0)
+		{
+			Color color = new Color("FFFFFF80");
+			double num2 = ((SaveManager.Instance.PrefsSave.FastMode == FastModeType.Fast) ? 0.2 : 0.3);
+			NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NHorizontalLinesVfx.Create(color, 0.8 + (double)Mathf.Min(8, num) * num2));
+			SfxCmd.Play("event:/sfx/characters/ironclad/ironclad_whirlwind");
+			NRun.Instance?.GlobalUi.AddChildSafely(NSmokyVignetteVfx.Create(color, color));
+		}
+

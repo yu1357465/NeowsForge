@@ -1,0 +1,251 @@
+// 🎯 机制分类：【Deck_Manipulation】
+// 📦 进度批次：第 2 组 (共 12 组)
+// 🗃️ 包含卡牌：10 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: Bombardment.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(18m, ValueProp.Move));
+
+	public Bombardment()
+		: base(3, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		NCreature nCreature = NCombatRoom.Instance?.GetCreatureNode(cardPlay.Target);
+		if (nCreature != null)
+		{
+			NLargeMagicMissileVfx nLargeMagicMissileVfx = NLargeMagicMissileVfx.Create(nCreature.GetBottomOfHitbox(), new Color("50b598"));
+			NCombatRoom.Instance.CombatVfxContainer.AddChildSafely(nLargeMagicMissileVfx);
+			await Cmd.Wait(nLargeMagicMissileVfx.WaitTime);
+		}
+
+// ========================================
+// 文件名: Brand.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new HpLossVar(1m),
+		new PowerVar<StrengthPower>(1m)
+	});
+
+	public Brand()
+		: base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		VfxCmd.PlayOnCreatureCenter(base.Owner.Creature, "vfx/vfx_bloody_impact");
+		await CreatureCmd.Damage(choiceContext, base.Owner.Creature, base.DynamicVars.HpLoss.BaseValue, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
+		CardModel cardModel = (await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1), context: choiceContext, player: base.Owner, filter: null, source: this)).FirstOrDefault();
+		if (cardModel != null)
+		{
+			await CardCmd.Exhaust(choiceContext, cardModel);
+		}
+
+// ========================================
+// 文件名: BulletTime.cs
+// ========================================
+public sealed class BulletTime : CardModel
+{
+	public BulletTime()
+		: base(3, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		foreach (CardModel card in PileType.Hand.GetPile(base.Owner).Cards)
+		{
+			if (!card.EnergyCost.CostsX)
+			{
+				card.SetToFreeThisTurn();
+			}
+		}
+		await PowerCmd.Apply<NoDrawPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+
+	protected override void OnUpgrade()
+	{
+		base.EnergyCost.UpgradeBy(-1);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: BundleOfJoy.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(3));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public BundleOfJoy()
+		: base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		IEnumerable<CardModel> distinctForCombat = CardFactory.GetDistinctForCombat(base.Owner, ModelDb.CardPool<ColorlessCardPool>().GetUnlockedCards(base.Owner.UnlockState, base.RunState.CardMultiplayerConstraint), base.DynamicVars.Cards.IntValue, base.Owner.RunState.Rng.CombatCardGeneration);
+		foreach (CardModel item in distinctForCombat)
+		{
+			await CardPileCmd.AddGeneratedCardToCombat(item, PileType.Hand, addedByPlayer: true);
+		}
+
+// ========================================
+// 文件名: Burn.cs
+// ========================================
+public sealed class Burn : CardModel
+{
+	public override int MaxUpgradeLevel => 0;
+
+	protected override IEnumerable<DynamicVar> CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(2m, ValueProp.Unpowered | ValueProp.Move));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Unplayable);
+
+	public override bool HasTurnEndInHandEffect => true;
+
+	protected override IEnumerable<string> ExtraRunAssetPaths => NGroundFireVfx.AssetPaths;
+
+	public Burn()
+		: base(-1, CardType.Status, CardRarity.Status, TargetType.None)
+	{
+	}
+
+	public override async Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
+	{
+		NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NGroundFireVfx.Create(base.Owner.Creature));
+		SfxCmd.Play("event:/sfx/characters/attack_fire");
+		await CreatureCmd.Damage(choiceContext, base.Owner.Creature, base.DynamicVars.Damage, this);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: BurningPact.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(2));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromKeyword(CardKeyword.Exhaust));
+
+	public BurningPact()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		CardModel cardModel = (await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1), context: choiceContext, player: base.Owner, filter: null, source: this)).FirstOrDefault();
+		if (cardModel != null)
+		{
+			await CardCmd.Exhaust(choiceContext, cardModel);
+		}
+
+// ========================================
+// 文件名: CalculatedGamble.cs
+// ========================================
+public sealed class CalculatedGamble : CardModel
+{
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public CalculatedGamble()
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		IEnumerable<CardModel> cards = PileType.Hand.GetPile(base.Owner).Cards;
+		int cardsToDraw = cards.Count();
+		await CardCmd.DiscardAndDraw(choiceContext, cards, cardsToDraw);
+	}
+
+	protected override void OnUpgrade()
+	{
+		AddKeyword(CardKeyword.Retain);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Cascade.cs
+// ========================================
+public sealed class Cascade : CardModel
+{
+	protected override bool HasEnergyCostX => true;
+
+	public Cascade()
+		: base(-1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		int num = ResolveEnergyXValue();
+		if (base.IsUpgraded)
+		{
+			num++;
+		}
+		await CardPileCmd.AutoPlayFromDrawPile(choiceContext, base.Owner, num, CardPilePosition.Top, forceExhaust: false);
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Cinder.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(18m, ValueProp.Move));
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromKeyword(CardKeyword.Exhaust));
+
+	public Cinder()
+		: base(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitVfxNode((Creature t) => NFireBurstVfx.Create(t, 0.75f))
+			.Execute(choiceContext);
+		CardPile pile = PileType.Hand.GetPile(base.Owner);
+		CardModel cardModel = base.Owner.RunState.Rng.CombatCardSelection.NextItem(pile.Cards);
+		if (cardModel != null)
+		{
+			await CardCmd.Exhaust(choiceContext, cardModel);
+		}
+
+// ========================================
+// 文件名: Clash.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(14m, ValueProp.Move));
+
+	protected override bool IsPlayable => CardPile.GetCards(base.Owner, PileType.Hand).All((CardModel c) => c.Type == CardType.Attack);
+
+	protected override bool ShouldGlowGoldInternal => IsPlayable;
+
+	public Clash()
+		: base(0, CardType.Attack, CardRarity.Event, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+	}
+

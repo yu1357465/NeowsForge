@@ -9,7 +9,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Sly"
-        ]
+        ],
+        "BaseDex": 1,
+        "PowerType": "DexterityPower"
     },
     "Accelerant": {
         "Cost": 1,
@@ -19,7 +21,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "AccelerantPower"
     },
     "Accuracy": {
         "Cost": 1,
@@ -29,7 +32,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "AccuracyPower"
     },
     "Acrobatics": {
         "Cost": 1,
@@ -39,7 +43,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 1
     },
     "AdaptiveStrike": {
         "Cost": 2,
@@ -63,7 +69,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 2,
+        "BaseEnergy": 1
     },
     "Afterimage": {
         "Cost": 1,
@@ -75,7 +83,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "PowerType": "AfterimagePower"
     },
     "Afterlife": {
         "Cost": 1,
@@ -99,7 +108,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "PowerType": "AggressionPower"
     },
     "Alchemize": {
         "Cost": 1,
@@ -121,7 +131,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 2
     },
     "AllForOne": {
         "Cost": 2,
@@ -168,7 +179,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseDex": 2,
+        "PowerType": "AnticipatePower",
+        "UpgradeDexBy": 1
     },
     "Apotheosis": {
         "Cost": 2,
@@ -195,7 +209,8 @@
             "Ethereal",
             "Exhaust",
             "Ethereal"
-        ]
+        ],
+        "PowerType": "IntangiblePower"
     },
     "Armaments": {
         "Cost": 1,
@@ -218,7 +233,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "PowerType": "ArsenalPower"
     },
     "AscendersBane": {
         "Cost": -1,
@@ -261,7 +277,10 @@
             "Exhaust"
         ],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 3
+        "BaseVuln": 1,
+        "UpgradeDamageBy": 3,
+        "PowerType": "VulnerablePower",
+        "UpgradeVulnBy": 1
     },
     "AstralPulse": {
         "Cost": 0,
@@ -283,7 +302,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 1,
+        "PowerType": "AutomationPower"
     },
     "Backflip": {
         "Cost": 1,
@@ -295,7 +316,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 5,
-        "UpgradeBlockBy": 3
+        "UpgradeBlockBy": 3,
+        "BaseCards": 2
     },
     "Backstab": {
         "Cost": 0,
@@ -349,7 +371,8 @@
             "Ethereal",
             "Ethereal"
         ],
-        "BaseDamage": 33
+        "BaseDamage": 33,
+        "BaseEnergy": 2
     },
     "Barrage": {
         "Cost": 1,
@@ -371,7 +394,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "BarricadePower"
     },
     "Bash": {
         "Cost": 2,
@@ -383,7 +407,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 8,
-        "UpgradeDamageBy": 2
+        "BaseVuln": 2,
+        "UpgradeDamageBy": 2,
+        "PowerType": "VulnerablePower",
+        "UpgradeVulnBy": 1
     },
     "BattleTrance": {
         "Cost": 0,
@@ -393,7 +420,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 3,
+        "PowerType": "NoDrawPower",
+        "UpgradeCardsBy": 1
     },
     "BeaconOfHope": {
         "Cost": 1,
@@ -405,7 +435,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "PowerType": "BeaconOfHopePower"
     },
     "BeamCell": {
         "Cost": 0,
@@ -417,7 +448,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 3,
-        "UpgradeDamageBy": 1
+        "BaseVuln": 1,
+        "UpgradeDamageBy": 1,
+        "PowerType": "VulnerablePower",
+        "UpgradeVulnBy": 1
     },
     "BeatDown": {
         "Cost": 3,
@@ -429,7 +463,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Unplayable"
-        ]
+        ],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 1
     },
     "BeatIntoShape": {
         "Cost": 1,
@@ -471,7 +507,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 2
     },
     "BiasedCognition": {
         "Cost": 1,
@@ -481,7 +518,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "FocusPower"
     },
     "BigBang": {
         "Cost": 0,
@@ -494,7 +532,9 @@
         "Keywords": [
             "Exhaust",
             "Innate"
-        ]
+        ],
+        "BaseCards": 1,
+        "BaseEnergy": 1
     },
     "BlackHole": {
         "Cost": 1,
@@ -504,7 +544,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "BlackHolePower"
     },
     "BladeDance": {
         "Cost": 1,
@@ -516,7 +557,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 1
     },
     "BladeOfInk": {
         "Cost": 1,
@@ -526,7 +569,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 2,
+        "UpgradeCardsBy": 1
     },
     "BlightStrike": {
         "Cost": 1,
@@ -538,7 +583,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 8,
-        "UpgradeDamageBy": 2
+        "UpgradeDamageBy": 2,
+        "PowerType": "DoomPower"
     },
     "Bloodletting": {
         "Cost": 0,
@@ -548,7 +594,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 2
     },
     "BloodWall": {
         "Cost": 2,
@@ -584,7 +631,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 5,
-        "UpgradeBlockBy": 3
+        "UpgradeBlockBy": 3,
+        "PowerType": "BlurPower"
     },
     "Bodyguard": {
         "Cost": 1,
@@ -682,7 +730,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 4,
+        "PowerType": "BorrowedTimePower"
     },
     "BouncingFlask": {
         "Cost": 2,
@@ -692,7 +742,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BasePoison": 3,
+        "PowerType": "PoisonPower"
     },
     "Brand": {
         "Cost": 0,
@@ -704,7 +756,10 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseStr": 1,
+        "PowerType": "StrengthPower",
+        "UpgradeStrBy": 1
     },
     "Break": {
         "Cost": 1,
@@ -716,7 +771,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 20,
-        "UpgradeDamageBy": 10
+        "BaseVuln": 5,
+        "UpgradeDamageBy": 10,
+        "PowerType": "VulnerablePower",
+        "UpgradeVulnBy": 2
     },
     "Breakthrough": {
         "Cost": 1,
@@ -738,7 +796,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 2,
+        "BaseEnergy": 2,
+        "UpgradeCardsBy": 1
     },
     "BubbleBubble": {
         "Cost": 1,
@@ -748,7 +809,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BasePoison": 9,
+        "PowerType": "PoisonPower",
+        "UpgradePoisonBy": 3
     },
     "Buffer": {
         "Cost": 2,
@@ -758,7 +822,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "BufferPower"
     },
     "BulkUp": {
         "Cost": 2,
@@ -768,7 +833,12 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseStr": 2,
+        "BaseDex": 2,
+        "PowerType": "StrengthPower",
+        "UpgradeStrBy": 1,
+        "UpgradeDexBy": 1
     },
     "BulletTime": {
         "Cost": 3,
@@ -778,7 +848,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "NoDrawPower"
     },
     "Bully": {
         "Cost": 0,
@@ -814,7 +885,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 1
     },
     "Burn": {
         "Cost": -1,
@@ -839,7 +912,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 2,
+        "UpgradeCardsBy": 1
     },
     "Burst": {
         "Cost": 1,
@@ -849,7 +924,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "BurstPower"
     },
     "Bury": {
         "Cost": 4,
@@ -895,7 +971,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "CalamityPower"
     },
     "Calcify": {
         "Cost": 1,
@@ -905,7 +982,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "CalcifyPower"
     },
     "CalculatedGamble": {
         "Cost": 0,
@@ -931,7 +1009,9 @@
         "Keywords": [
             "Ethereal",
             "Innate"
-        ]
+        ],
+        "BaseCards": 1,
+        "PowerType": "CallOfTheVoidPower"
     },
     "Caltrops": {
         "Cost": 1,
@@ -941,7 +1021,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "ThornsPower"
     },
     "Capacitor": {
         "Cost": 1,
@@ -963,7 +1044,9 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 3,
-        "UpgradeDamageBy": 1
+        "UpgradeDamageBy": 1,
+        "BaseCards": 3,
+        "UpgradeCardsBy": 1
     },
     "Cascade": {
         "Cost": -1,
@@ -985,7 +1068,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Unplayable"
-        ]
+        ],
+        "BaseCards": 2,
+        "UpgradeCardsBy": 1
     },
     "CelestialMight": {
         "Cost": 2,
@@ -1016,7 +1101,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 2
     },
     "ChargeBattery": {
         "Cost": 1,
@@ -1028,7 +1114,9 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 7,
-        "UpgradeBlockBy": 3
+        "UpgradeBlockBy": 3,
+        "BaseEnergy": 1,
+        "PowerType": "EnergyNextTurnPower"
     },
     "ChildOfTheStars": {
         "Cost": 1,
@@ -1038,7 +1126,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "ChildOfTheStarsPower"
     },
     "Chill": {
         "Cost": 0,
@@ -1112,7 +1201,9 @@
         "IsExhaust": false,
         "IsEthereal": false,
         "Keywords": [],
-        "BaseBlock": 6
+        "BaseBlock": 6,
+        "BaseCards": 1,
+        "UpgradeCardsBy": 1
     },
     "CloakOfStars": {
         "Cost": 0,
@@ -1173,7 +1264,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 5,
-        "UpgradeBlockBy": 3
+        "UpgradeBlockBy": 3,
+        "PowerType": "ColossusPower"
     },
     "Comet": {
         "Cost": 0,
@@ -1185,7 +1277,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 33,
-        "UpgradeDamageBy": 11
+        "BaseVuln": 3,
+        "BaseWeak": 3,
+        "UpgradeDamageBy": 11,
+        "PowerType": "WeakPower"
     },
     "Compact": {
         "Cost": 1,
@@ -1231,7 +1326,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "ConquerorPower"
     },
     "ConsumingShadow": {
         "Cost": 2,
@@ -1241,7 +1337,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "ConsumingShadowPower"
     },
     "Convergence": {
         "Cost": 1,
@@ -1253,7 +1350,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Retain"
-        ]
+        ],
+        "BaseEnergy": 1,
+        "PowerType": "RetainHandPower"
     },
     "Coolant": {
         "Cost": 1,
@@ -1263,7 +1362,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "CoolantPower"
     },
     "Coolheaded": {
         "Cost": 1,
@@ -1273,7 +1373,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 1,
+        "UpgradeCardsBy": 1
     },
     "Coordinate": {
         "Cost": 1,
@@ -1283,7 +1385,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseStr": 5,
+        "PowerType": "CoordinatePower",
+        "UpgradeStrBy": 3
     },
     "CorrosiveWave": {
         "Cost": 1,
@@ -1293,7 +1398,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "CorrosiveWavePower"
     },
     "Corruption": {
         "Cost": 3,
@@ -1305,7 +1411,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "CorruptionPower"
     },
     "CosmicIndifference": {
         "Cost": 1,
@@ -1327,7 +1434,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "CountdownPower"
     },
     "CrashLanding": {
         "Cost": 1,
@@ -1349,7 +1457,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "CreativeAiPower"
     },
     "CrescentSpear": {
         "Cost": 1,
@@ -1371,7 +1480,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "CrimsonMantlePower"
     },
     "Cruelty": {
         "Cost": 1,
@@ -1381,7 +1491,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "CrueltyPower"
     },
     "CrushUnder": {
         "Cost": 1,
@@ -1393,7 +1504,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 7,
-        "UpgradeDamageBy": 1
+        "UpgradeDamageBy": 1,
+        "PowerType": "CrushUnderPower",
+        "BaseStrengthLoss": 1,
+        "UpgradeStrengthLossBy": 1
     },
     "CurseOfTheBell": {
         "Cost": -1,
@@ -1440,7 +1554,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 2,
+        "PowerType": "DanseMacabrePower"
     },
     "DarkEmbrace": {
         "Cost": 2,
@@ -1452,7 +1568,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "DarkEmbracePower"
     },
     "Darkness": {
         "Cost": 1,
@@ -1474,7 +1591,10 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "DarkShacklesPower",
+        "BaseStrengthLoss": 9,
+        "UpgradeStrengthLossBy": 6
     },
     "Dash": {
         "Cost": 2,
@@ -1511,7 +1631,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BasePoison": 5,
+        "PowerType": "PoisonPower",
+        "UpgradePoisonBy": 2
     },
     "Deathbringer": {
         "Cost": 2,
@@ -1521,7 +1644,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseWeak": 1,
+        "PowerType": "DoomPower"
     },
     "DeathMarch": {
         "Cost": 1,
@@ -1557,7 +1682,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 2
+        "UpgradeDamageBy": 2,
+        "PowerType": "DebilitatePower"
     },
     "Debris": {
         "Cost": 1,
@@ -1607,7 +1733,9 @@
         "Keywords": [
             "Exhaust",
             "Unplayable"
-        ]
+        ],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 2
     },
     "DefendDefect": {
         "Cost": 1,
@@ -1703,7 +1831,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "FocusPower"
     },
     "Defy": {
         "Cost": 1,
@@ -1717,7 +1846,9 @@
             "Ethereal"
         ],
         "BaseBlock": 6,
-        "UpgradeBlockBy": 3
+        "BaseWeak": 1,
+        "UpgradeBlockBy": 3,
+        "PowerType": "WeakPower"
     },
     "Delay": {
         "Cost": 2,
@@ -1729,7 +1860,9 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 11,
-        "UpgradeBlockBy": 2
+        "UpgradeBlockBy": 2,
+        "BaseEnergy": 1,
+        "PowerType": "EnergyNextTurnPower"
     },
     "Demesne": {
         "Cost": 3,
@@ -1741,7 +1874,10 @@
         "IsEthereal": true,
         "Keywords": [
             "Ethereal"
-        ]
+        ],
+        "BaseCards": 1,
+        "BaseEnergy": 1,
+        "PowerType": "DemesnePower"
     },
     "DemonForm": {
         "Cost": 3,
@@ -1751,7 +1887,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseStr": 2,
+        "PowerType": "DemonFormPower"
     },
     "DemonicShield": {
         "Cost": 0,
@@ -1798,7 +1936,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "DevourLifePower"
     },
     "Dirge": {
         "Cost": 0,
@@ -1833,7 +1972,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "DisintegrationPower"
     },
     "Dismantle": {
         "Cost": 1,
@@ -1869,7 +2009,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 4,
-        "UpgradeBlockBy": 2
+        "UpgradeBlockBy": 2,
+        "PowerType": "BlockNextTurnPower"
     },
     "Dominate": {
         "Cost": 1,
@@ -1881,7 +2022,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseVuln": 1,
+        "PowerType": "VulnerablePower"
     },
     "DoubleEnergy": {
         "Cost": 1,
@@ -1905,7 +2048,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Unplayable"
-        ]
+        ],
+        "BaseWeak": 1,
+        "PowerType": "WeakPower"
     },
     "DrainPower": {
         "Cost": 1,
@@ -1917,7 +2062,9 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 2
+        "UpgradeDamageBy": 2,
+        "BaseCards": 2,
+        "UpgradeCardsBy": 1
     },
     "DramaticEntrance": {
         "Cost": 0,
@@ -1945,7 +2092,8 @@
         "Keywords": [
             "Exhaust",
             "Retain"
-        ]
+        ],
+        "BaseCards": 3
     },
     "DrumOfBattle": {
         "Cost": 0,
@@ -1957,7 +2105,10 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 2,
+        "PowerType": "DrumOfBattlePower",
+        "UpgradeCardsBy": 1
     },
     "Dualcast": {
         "Cost": 1,
@@ -1977,7 +2128,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 1,
+        "UpgradeCardsBy": 1
     },
     "DyingStar": {
         "Cost": 1,
@@ -1991,7 +2144,10 @@
             "Ethereal"
         ],
         "BaseDamage": 9,
-        "UpgradeDamageBy": 2
+        "UpgradeDamageBy": 2,
+        "PowerType": "DyingStarPower",
+        "BaseStrengthLoss": 9,
+        "UpgradeStrengthLossBy": 2
     },
     "EchoForm": {
         "Cost": 3,
@@ -2004,7 +2160,8 @@
         "Keywords": [
             "Ethereal",
             "Ethereal"
-        ]
+        ],
+        "PowerType": "EchoFormPower"
     },
     "EchoingSlash": {
         "Cost": 1,
@@ -2028,7 +2185,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "IntangiblePower"
     },
     "EndOfDays": {
         "Cost": 3,
@@ -2038,7 +2196,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "DoomPower"
     },
     "EnergySurge": {
         "Cost": 1,
@@ -2050,7 +2209,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseEnergy": 2
     },
     "EnfeeblingTouch": {
         "Cost": 1,
@@ -2062,7 +2222,10 @@
         "IsEthereal": true,
         "Keywords": [
             "Ethereal"
-        ]
+        ],
+        "PowerType": "EnfeeblingTouchPower",
+        "BaseStrengthLoss": 8,
+        "UpgradeStrengthLossBy": 3
     },
     "Enlightenment": {
         "Cost": 0,
@@ -2108,7 +2271,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "BaseCards": 1,
+        "PowerType": "EntropyPower"
     },
     "Envenom": {
         "Cost": 2,
@@ -2118,7 +2283,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "EnvenomPower"
     },
     "Equilibrium": {
         "Cost": 2,
@@ -2132,7 +2298,8 @@
             "Retain"
         ],
         "BaseBlock": 13,
-        "UpgradeBlockBy": 3
+        "UpgradeBlockBy": 3,
+        "PowerType": "RetainHandPower"
     },
     "Eradicate": {
         "Cost": 0,
@@ -2168,7 +2335,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "PlatingPower"
     },
     "EvilEye": {
         "Cost": 1,
@@ -2192,7 +2360,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 0,
+        "PowerType": "NoEnergyGainPower"
     },
     "Expertise": {
         "Cost": 1,
@@ -2202,7 +2372,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 6,
+        "UpgradeCardsBy": 1
     },
     "Expose": {
         "Cost": 0,
@@ -2214,7 +2386,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "VulnerablePower"
     },
     "Exterminate": {
         "Cost": 1,
@@ -2238,7 +2411,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 8,
-        "UpgradeDamageBy": 4
+        "BaseVuln": 1,
+        "BaseWeak": 1,
+        "UpgradeDamageBy": 4,
+        "PowerType": "WeakPower"
     },
     "FanOfKnives": {
         "Cost": 2,
@@ -2248,7 +2424,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 4,
+        "PowerType": "FanOfKnivesPower"
     },
     "Fasten": {
         "Cost": 1,
@@ -2258,7 +2436,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "FastenPower"
     },
     "Fear": {
         "Cost": 1,
@@ -2272,7 +2451,10 @@
             "Ethereal"
         ],
         "BaseDamage": 7,
-        "UpgradeDamageBy": 1
+        "BaseVuln": 1,
+        "UpgradeDamageBy": 1,
+        "PowerType": "VulnerablePower",
+        "UpgradeVulnBy": 1
     },
     "Feed": {
         "Cost": 1,
@@ -2296,7 +2478,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseStr": 5,
+        "PowerType": "FeedingFrenzyPower",
+        "UpgradeStrBy": 2
     },
     "FeelNoPain": {
         "Cost": 1,
@@ -2308,7 +2493,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "FeelNoPainPower"
     },
     "Feral": {
         "Cost": 2,
@@ -2318,7 +2504,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "FeralPower"
     },
     "Fetch": {
         "Cost": 0,
@@ -2330,7 +2517,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 3,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "BaseCards": 1
     },
     "FiendFire": {
         "Cost": 2,
@@ -2356,7 +2544,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 5,
-        "UpgradeDamageBy": 1
+        "BaseStr": 3,
+        "UpgradeDamageBy": 1,
+        "PowerType": "StrengthPower",
+        "UpgradeStrBy": 1
     },
     "FightThrough": {
         "Cost": 1,
@@ -2380,7 +2571,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 4,
-        "UpgradeBlockBy": 3
+        "UpgradeBlockBy": 3,
+        "BaseCards": 1
     },
     "Finisher": {
         "Cost": 1,
@@ -2430,7 +2622,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 12,
-        "UpgradeBlockBy": 4
+        "UpgradeBlockBy": 4,
+        "PowerType": "FlameBarrierPower"
     },
     "Flanking": {
         "Cost": 2,
@@ -2440,7 +2633,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "FlankingPower"
     },
     "FlashOfSteel": {
         "Cost": 0,
@@ -2452,7 +2646,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 5,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "BaseCards": 1
     },
     "Flatten": {
         "Cost": 2,
@@ -2502,7 +2697,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 9,
-        "UpgradeDamageBy": 2
+        "UpgradeDamageBy": 2,
+        "PowerType": "FocusedStrikePower"
     },
     "FollowThrough": {
         "Cost": 1,
@@ -2539,7 +2735,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseDex": 2,
+        "PowerType": "DexterityPower",
+        "UpgradeDexBy": 1
     },
     "ForbiddenGrimoire": {
         "Cost": 2,
@@ -2551,7 +2750,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Eternal"
-        ]
+        ],
+        "PowerType": "ForbiddenGrimoirePower"
     },
     "ForegoneConclusion": {
         "Cost": 1,
@@ -2561,7 +2761,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 2,
+        "PowerType": "ForegoneConclusionPower",
+        "UpgradeCardsBy": 1
     },
     "ForgottenRitual": {
         "Cost": 1,
@@ -2574,7 +2777,8 @@
         "Keywords": [
             "Exhaust",
             "Exhaust"
-        ]
+        ],
+        "BaseEnergy": 3
     },
     "FranticEscape": {
         "Cost": 1,
@@ -2594,7 +2798,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseStr": 2,
+        "BaseEnergy": 1,
+        "PowerType": "StrengthPower"
     },
     "Ftl": {
         "Cost": 0,
@@ -2606,7 +2813,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 5,
-        "UpgradeDamageBy": 1
+        "UpgradeDamageBy": 1,
+        "BaseCards": 1
     },
     "Fuel": {
         "Cost": 0,
@@ -2618,7 +2826,10 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 1,
+        "BaseEnergy": 1,
+        "UpgradeCardsBy": 1
     },
     "Furnace": {
         "Cost": 1,
@@ -2628,7 +2839,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "FurnacePower"
     },
     "Fusion": {
         "Cost": 2,
@@ -2650,7 +2862,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 13,
-        "UpgradeDamageBy": 5
+        "BaseVuln": 2,
+        "BaseWeak": 2,
+        "UpgradeDamageBy": 5,
+        "PowerType": "WeakPower"
     },
     "GangUp": {
         "Cost": 1,
@@ -2684,7 +2899,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "GenesisPower"
     },
     "GeneticAlgorithm": {
         "Cost": 1,
@@ -2742,7 +2958,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 1
     },
     "GlimpseBeyond": {
         "Cost": 1,
@@ -2754,7 +2972,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 1
     },
     "Glitterstream": {
         "Cost": 2,
@@ -2766,7 +2986,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 11,
-        "UpgradeBlockBy": 2
+        "UpgradeBlockBy": 2,
+        "PowerType": "BlockNextTurnPower"
     },
     "Glow": {
         "Cost": 1,
@@ -2776,7 +2997,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 1,
+        "PowerType": "DrawCardsNextTurnPower"
     },
     "GoForTheEyes": {
         "Cost": 0,
@@ -2788,7 +3011,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 3,
-        "UpgradeDamageBy": 1
+        "BaseWeak": 1,
+        "UpgradeDamageBy": 1,
+        "PowerType": "WeakPower",
+        "UpgradeWeakBy": 1
     },
     "GoldAxe": {
         "Cost": 1,
@@ -2840,7 +3066,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 8,
-        "UpgradeBlockBy": 3
+        "UpgradeBlockBy": 3,
+        "BaseCards": 1
     },
     "Greed": {
         "Cost": -1,
@@ -2877,7 +3104,9 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 12,
-        "UpgradeDamageBy": 1
+        "UpgradeDamageBy": 1,
+        "BaseCards": 2,
+        "UpgradeCardsBy": 1
     },
     "Guilty": {
         "Cost": -1,
@@ -2911,7 +3140,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "HailstormPower"
     },
     "HammerTime": {
         "Cost": 2,
@@ -2921,7 +3151,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "HammerTimePower"
     },
     "HandOfGreed": {
         "Cost": 2,
@@ -2959,7 +3190,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "PowerType": "HangPower"
     },
     "Haunt": {
         "Cost": 1,
@@ -2969,7 +3201,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "HauntPower"
     },
     "Havoc": {
         "Cost": 1,
@@ -2993,7 +3226,10 @@
         "IsEthereal": false,
         "Keywords": [
             "Sly"
-        ]
+        ],
+        "BasePoison": 4,
+        "PowerType": "PoisonPower",
+        "UpgradePoisonBy": 2
     },
     "Headbutt": {
         "Cost": 1,
@@ -3017,7 +3253,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 8,
-        "UpgradeDamageBy": 2
+        "UpgradeDamageBy": 2,
+        "BaseEnergy": 4
     },
     "Hegemony": {
         "Cost": 2,
@@ -3029,7 +3266,9 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 15,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "BaseEnergy": 2,
+        "PowerType": "EnergyNextTurnPower"
     },
     "HeirloomHammer": {
         "Cost": 2,
@@ -3065,7 +3304,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "PowerType": "HelloWorldPower"
     },
     "Hellraiser": {
         "Cost": 2,
@@ -3075,7 +3315,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "HellraiserPower"
     },
     "Hemokinesis": {
         "Cost": 1,
@@ -3097,7 +3338,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "StarNextTurnPower"
     },
     "HiddenDaggers": {
         "Cost": 0,
@@ -3107,7 +3349,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 2
     },
     "HiddenGem": {
         "Cost": 1,
@@ -3131,7 +3374,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 11,
-        "UpgradeDamageBy": 2
+        "BaseVuln": 2,
+        "UpgradeDamageBy": 2,
+        "PowerType": "VulnerablePower",
+        "UpgradeVulnBy": 1
     },
     "Hologram": {
         "Cost": 1,
@@ -3159,7 +3405,8 @@
         "Keywords": [
             "Exhaust",
             "Exhaust"
-        ]
+        ],
+        "PowerType": "HotfixPower"
     },
     "HowlFromBeyond": {
         "Cost": 3,
@@ -3185,7 +3432,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 2,
+        "UpgradeCardsBy": 1
     },
     "Hyperbeam": {
         "Cost": 2,
@@ -3197,7 +3446,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 26,
-        "UpgradeDamageBy": 8
+        "UpgradeDamageBy": 8,
+        "PowerType": "FocusPower"
     },
     "IAmInvincible": {
         "Cost": 1,
@@ -3244,7 +3494,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 2,
+        "UpgradeCardsBy": 1
     },
     "Impervious": {
         "Cost": 2,
@@ -3293,7 +3545,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "InfernoPower"
     },
     "InfiniteBlades": {
         "Cost": 1,
@@ -3305,7 +3558,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "PowerType": "InfiniteBladesPower"
     },
     "Inflame": {
         "Cost": 1,
@@ -3315,7 +3569,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseStr": 2,
+        "PowerType": "StrengthPower"
     },
     "Injury": {
         "Cost": -1,
@@ -3339,7 +3595,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 9,
-        "UpgradeBlockBy": 4
+        "UpgradeBlockBy": 4,
+        "PowerType": "CoveredPower"
     },
     "Invoke": {
         "Cost": 1,
@@ -3349,7 +3606,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 2,
+        "PowerType": "SummonNextTurnPower"
     },
     "IronWave": {
         "Cost": 1,
@@ -3373,7 +3632,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "IterationPower"
     },
     "JackOfAllTrades": {
         "Cost": 0,
@@ -3385,7 +3645,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 1,
+        "UpgradeCardsBy": 1
     },
     "Jackpot": {
         "Cost": 3,
@@ -3397,7 +3659,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 25,
-        "UpgradeDamageBy": 5
+        "UpgradeDamageBy": 5,
+        "BaseCards": 3
     },
     "Juggernaut": {
         "Cost": 2,
@@ -3407,7 +3670,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "JuggernautPower"
     },
     "Juggling": {
         "Cost": 1,
@@ -3419,7 +3683,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "PowerType": "JugglingPower"
     },
     "KinglyKick": {
         "Cost": 4,
@@ -3465,7 +3730,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 4
+        "UpgradeDamageBy": 4,
+        "PowerType": "KnockdownPower"
     },
     "KnockoutBlow": {
         "Cost": 3,
@@ -3490,7 +3756,10 @@
         "Keywords": [
             "Exhaust",
             "Exhaust"
-        ]
+        ],
+        "BaseWeak": 1,
+        "BaseVuln": 1,
+        "PowerType": "WeakPower"
     },
     "LanternKey": {
         "Cost": -1,
@@ -3524,7 +3793,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 3,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "BaseCards": 2
     },
     "Leap": {
         "Cost": 1,
@@ -3560,7 +3830,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 11,
-        "UpgradeBlockBy": 3
+        "BaseWeak": 2,
+        "UpgradeBlockBy": 3,
+        "PowerType": "WeakPower",
+        "UpgradeWeakBy": 1
     },
     "Lethality": {
         "Cost": 1,
@@ -3572,7 +3845,8 @@
         "IsEthereal": true,
         "Keywords": [
             "Ethereal"
-        ]
+        ],
+        "PowerType": "LethalityPower"
     },
     "Lift": {
         "Cost": 1,
@@ -3596,7 +3870,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 4,
-        "UpgradeBlockBy": 3
+        "UpgradeBlockBy": 3,
+        "PowerType": "LightningRodPower"
     },
     "Loop": {
         "Cost": 1,
@@ -3606,7 +3881,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "LoopPower"
     },
     "Luminesce": {
         "Cost": 0,
@@ -3619,7 +3895,8 @@
         "Keywords": [
             "Exhaust",
             "Retain"
-        ]
+        ],
+        "BaseEnergy": 2
     },
     "LunarBlast": {
         "Cost": 0,
@@ -3643,7 +3920,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "BaseCards": 1,
+        "PowerType": "MachineLearningPower"
     },
     "MadScience": {
         "Cost": 1,
@@ -3657,7 +3936,9 @@
             "Innate"
         ],
         "BaseDamage": 12,
-        "BaseBlock": 8
+        "BaseBlock": 8,
+        "BaseCards": 3,
+        "PowerType": "StrengthPower"
     },
     "MakeItSo": {
         "Cost": 0,
@@ -3669,7 +3950,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 6,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "BaseCards": 3
     },
     "Malaise": {
         "Cost": 0,
@@ -3681,7 +3963,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "StrengthPower"
     },
     "Mangle": {
         "Cost": 3,
@@ -3693,7 +3976,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 15,
-        "UpgradeDamageBy": 5
+        "UpgradeDamageBy": 5,
+        "PowerType": "ManglePower",
+        "BaseStrengthLoss": 10,
+        "UpgradeStrengthLossBy": 5
     },
     "ManifestAuthority": {
         "Cost": 1,
@@ -3717,7 +4003,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 1
     },
     "MasterPlanner": {
         "Cost": 2,
@@ -3729,7 +4017,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Sly"
-        ]
+        ],
+        "PowerType": "MasterPlannerPower"
     },
     "Maul": {
         "Cost": 1,
@@ -3751,7 +4040,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "MayhemPower"
     },
     "Melancholy": {
         "Cost": 3,
@@ -3763,7 +4053,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 13,
-        "UpgradeBlockBy": 4
+        "UpgradeBlockBy": 4,
+        "BaseEnergy": 1
     },
     "MementoMori": {
         "Cost": 1,
@@ -3787,7 +4078,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 2
     },
     "MeteorShower": {
         "Cost": 0,
@@ -3799,7 +4092,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 14,
-        "UpgradeDamageBy": 7
+        "BaseVuln": 2,
+        "BaseWeak": 2,
+        "UpgradeDamageBy": 7,
+        "PowerType": "WeakPower"
     },
     "MeteorStrike": {
         "Cost": 5,
@@ -3847,7 +4143,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "MindRotPower"
     },
     "MinionDiveBomb": {
         "Cost": 0,
@@ -3889,7 +4186,8 @@
             "Exhaust"
         ],
         "BaseDamage": 6,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "BaseCards": 1
     },
     "Mirage": {
         "Cost": 1,
@@ -3925,7 +4223,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 1,
+        "UpgradeCardsBy": 1
     },
     "MoltenFist": {
         "Cost": 1,
@@ -3939,7 +4239,8 @@
             "Exhaust"
         ],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 4
+        "UpgradeDamageBy": 4,
+        "PowerType": "VulnerablePower"
     },
     "MomentumStrike": {
         "Cost": 1,
@@ -3961,7 +4262,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "MonarchsGazePower",
+        "BaseStrengthLoss": 1
     },
     "Monologue": {
         "Cost": 0,
@@ -3973,7 +4276,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Retain"
-        ]
+        ],
+        "PowerType": "MonologuePower"
     },
     "MultiCast": {
         "Cost": 0,
@@ -4004,7 +4308,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "NecroMasteryPower"
     },
     "NegativePulse": {
         "Cost": 1,
@@ -4016,7 +4321,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 5,
-        "UpgradeBlockBy": 1
+        "UpgradeBlockBy": 1,
+        "PowerType": "DoomPower"
     },
     "NeowsFury": {
         "Cost": 1,
@@ -4030,7 +4336,9 @@
             "Exhaust"
         ],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 4
+        "UpgradeDamageBy": 4,
+        "BaseCards": 2,
+        "UpgradeCardsBy": 1
     },
     "Neurosurge": {
         "Cost": 0,
@@ -4040,7 +4348,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 2,
+        "BaseEnergy": 3,
+        "PowerType": "NeurosurgePower"
     },
     "Neutralize": {
         "Cost": 0,
@@ -4052,7 +4363,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 3,
-        "UpgradeDamageBy": 1
+        "BaseWeak": 1,
+        "UpgradeDamageBy": 1,
+        "PowerType": "WeakPower",
+        "UpgradeWeakBy": 1
     },
     "NeutronAegis": {
         "Cost": 1,
@@ -4062,7 +4376,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "PlatingPower"
     },
     "Nightmare": {
         "Cost": 3,
@@ -4074,7 +4389,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "NightmarePower"
     },
     "NoEscape": {
         "Cost": 1,
@@ -4084,7 +4400,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "DoomPower"
     },
     "Normality": {
         "Cost": -1,
@@ -4106,7 +4423,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "NostalgiaPower"
     },
     "NotYet": {
         "Cost": 2,
@@ -4128,7 +4446,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "NoxiousFumesPower"
     },
     "Null": {
         "Cost": 2,
@@ -4140,7 +4459,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 3
+        "BaseWeak": 2,
+        "UpgradeDamageBy": 3,
+        "PowerType": "WeakPower",
+        "UpgradeWeakBy": 1
     },
     "Oblivion": {
         "Cost": 0,
@@ -4150,7 +4472,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "OblivionPower"
     },
     "Offering": {
         "Cost": 0,
@@ -4162,7 +4485,10 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 3,
+        "BaseEnergy": 2,
+        "UpgradeCardsBy": 2
     },
     "Omnislice": {
         "Cost": 0,
@@ -4184,7 +4510,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "OneTwoPunchPower"
     },
     "Orbit": {
         "Cost": 2,
@@ -4194,7 +4521,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 1,
+        "PowerType": "OrbitPower"
     },
     "Outbreak": {
         "Cost": 1,
@@ -4204,7 +4533,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "OutbreakPower"
     },
     "Outmaneuver": {
         "Cost": 1,
@@ -4214,7 +4544,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 2,
+        "PowerType": "EnergyNextTurnPower"
     },
     "Overclock": {
         "Cost": 0,
@@ -4224,7 +4556,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 2,
+        "UpgradeCardsBy": 1
     },
     "PactsEnd": {
         "Cost": 0,
@@ -4236,7 +4570,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 17,
-        "UpgradeDamageBy": 6
+        "UpgradeDamageBy": 6,
+        "BaseCards": 3
     },
     "Pagestorm": {
         "Cost": 1,
@@ -4248,7 +4583,9 @@
         "IsEthereal": true,
         "Keywords": [
             "Ethereal"
-        ]
+        ],
+        "BaseCards": 1,
+        "PowerType": "PagestormPower"
     },
     "PaleBlueDot": {
         "Cost": 1,
@@ -4258,7 +4595,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 1,
+        "PowerType": "PaleBlueDotPower",
+        "UpgradeCardsBy": 1
     },
     "Panache": {
         "Cost": 0,
@@ -4268,7 +4608,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "PanachePower"
     },
     "PanicButton": {
         "Cost": 0,
@@ -4282,7 +4623,8 @@
             "Exhaust"
         ],
         "BaseBlock": 30,
-        "UpgradeBlockBy": 10
+        "UpgradeBlockBy": 10,
+        "PowerType": "NoBlockPower"
     },
     "Parry": {
         "Cost": 1,
@@ -4292,7 +4634,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "ParryPower"
     },
     "Parse": {
         "Cost": 1,
@@ -4304,7 +4647,9 @@
         "IsEthereal": true,
         "Keywords": [
             "Ethereal"
-        ]
+        ],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 1
     },
     "ParticleWall": {
         "Cost": 0,
@@ -4328,7 +4673,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 9,
-        "UpgradeBlockBy": 2
+        "UpgradeBlockBy": 2,
+        "PowerType": "VigorPower"
     },
     "Peck": {
         "Cost": 1,
@@ -4363,7 +4709,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Retain"
-        ]
+        ],
+        "PowerType": "PhantomBladesPower"
     },
     "PhotonCut": {
         "Cost": 1,
@@ -4375,7 +4722,9 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "BaseCards": 1,
+        "UpgradeCardsBy": 1
     },
     "PiercingWail": {
         "Cost": 1,
@@ -4387,7 +4736,10 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "PiercingWailPower",
+        "BaseStrengthLoss": 6,
+        "UpgradeStrengthLossBy": 2
     },
     "Pillage": {
         "Cost": 1,
@@ -4411,7 +4763,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 3,
-        "UpgradeBlockBy": 1
+        "UpgradeBlockBy": 1,
+        "PowerType": "PillarOfCreationPower"
     },
     "Pinpoint": {
         "Cost": 3,
@@ -4435,7 +4788,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 6,
-        "UpgradeDamageBy": 2
+        "BasePoison": 3,
+        "UpgradeDamageBy": 2,
+        "PowerType": "PoisonPower",
+        "UpgradePoisonBy": 1
     },
     "Poke": {
         "Cost": 0,
@@ -4459,7 +4815,9 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 9,
-        "UpgradeDamageBy": 1
+        "UpgradeDamageBy": 1,
+        "BaseCards": 1,
+        "UpgradeCardsBy": 1
     },
     "PoorSleep": {
         "Cost": -1,
@@ -4484,7 +4842,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 12,
-        "UpgradeDamageBy": 6
+        "UpgradeDamageBy": 6,
+        "PowerType": "FreeSkillPower"
     },
     "PreciseCut": {
         "Cost": 0,
@@ -4507,7 +4866,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 15,
-        "UpgradeDamageBy": 5
+        "UpgradeDamageBy": 5,
+        "PowerType": "DrawCardsNextTurnPower"
     },
     "Prepared": {
         "Cost": 0,
@@ -4517,7 +4877,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 1,
+        "UpgradeCardsBy": 1
     },
     "PrepTime": {
         "Cost": 1,
@@ -4527,7 +4889,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "PrepTimePower"
     },
     "PrimalForce": {
         "Cost": 0,
@@ -4549,7 +4912,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseEnergy": 2
     },
     "Prolong": {
         "Cost": 0,
@@ -4562,7 +4926,8 @@
         "Keywords": [
             "Exhaust",
             "Exhaust"
-        ]
+        ],
+        "PowerType": "BlockNextTurnPower"
     },
     "Prophesize": {
         "Cost": 2,
@@ -4572,7 +4937,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 6,
+        "UpgradeCardsBy": 3
     },
     "Protector": {
         "Cost": 1,
@@ -4593,7 +4960,12 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseStr": 1,
+        "BaseDex": 1,
+        "PowerType": "StrengthPower",
+        "UpgradeDexBy": 1,
+        "UpgradeStrBy": 1
     },
     "PullAggro": {
         "Cost": 2,
@@ -4632,7 +5004,9 @@
         "Keywords": [
             "Retain",
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 2
     },
     "Putrefy": {
         "Cost": 1,
@@ -4644,7 +5018,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "WeakPower"
     },
     "Pyre": {
         "Cost": 2,
@@ -4654,7 +5029,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 1,
+        "PowerType": "PyrePower"
     },
     "Quadcast": {
         "Cost": 1,
@@ -4696,7 +5073,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "RagePower"
     },
     "Rainbow": {
         "Cost": 2,
@@ -4782,7 +5160,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Retain"
-        ]
+        ],
+        "PowerType": "ReaperFormPower"
     },
     "Reave": {
         "Cost": 1,
@@ -4794,7 +5173,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 9,
-        "UpgradeDamageBy": 2
+        "UpgradeDamageBy": 2,
+        "BaseCards": 1
     },
     "Reboot": {
         "Cost": 0,
@@ -4806,7 +5186,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 4,
+        "UpgradeCardsBy": 2
     },
     "Rebound": {
         "Cost": 1,
@@ -4818,7 +5200,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 9,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "PowerType": "ReboundPower"
     },
     "RefineBlade": {
         "Cost": 1,
@@ -4828,7 +5211,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 1,
+        "PowerType": "EnergyNextTurnPower"
     },
     "Reflect": {
         "Cost": 1,
@@ -4840,7 +5225,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 17,
-        "UpgradeBlockBy": 4
+        "UpgradeBlockBy": 4,
+        "PowerType": "ReflectPower"
     },
     "Reflex": {
         "Cost": 3,
@@ -4852,7 +5238,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Sly"
-        ]
+        ],
+        "BaseCards": 2,
+        "UpgradeCardsBy": 1
     },
     "Refract": {
         "Cost": 3,
@@ -4890,7 +5278,11 @@
             "Exhaust"
         ],
         "BaseBlock": 15,
-        "UpgradeBlockBy": 2
+        "UpgradeBlockBy": 2,
+        "BaseCards": 2,
+        "BaseEnergy": 2,
+        "PowerType": "DrawCardsNextTurnPower",
+        "UpgradeCardsBy": 1
     },
     "Rend": {
         "Cost": 2,
@@ -4912,7 +5304,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseStr": 1,
+        "PowerType": "StrengthPower"
     },
     "Restlessness": {
         "Cost": 0,
@@ -4924,7 +5318,10 @@
         "IsEthereal": false,
         "Keywords": [
             "Retain"
-        ]
+        ],
+        "BaseCards": 2,
+        "BaseEnergy": 2,
+        "UpgradeCardsBy": 1
     },
     "Ricochet": {
         "Cost": 2,
@@ -4949,7 +5346,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 4,
-        "UpgradeDamageBy": 2
+        "UpgradeDamageBy": 2,
+        "BaseEnergy": 2
     },
     "RipAndTear": {
         "Cost": 1,
@@ -4973,7 +5371,9 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 13,
-        "UpgradeDamageBy": 1
+        "UpgradeDamageBy": 1,
+        "BaseCards": 1,
+        "UpgradeCardsBy": 1
     },
     "RollingBoulder": {
         "Cost": 3,
@@ -4983,7 +5383,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "RollingBoulderPower"
     },
     "RoyalGamble": {
         "Cost": 0,
@@ -5006,7 +5407,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "RoyaltiesPower"
     },
     "Rupture": {
         "Cost": 1,
@@ -5016,7 +5418,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseStr": 1,
+        "PowerType": "RupturePower",
+        "UpgradeStrBy": 1
     },
     "Sacrifice": {
         "Cost": 1,
@@ -5042,7 +5447,8 @@
             "Retain"
         ],
         "BaseDamage": 12,
-        "UpgradeDamageBy": 4
+        "UpgradeDamageBy": 4,
+        "PowerType": "RetainHandPower"
     },
     "Scavenge": {
         "Cost": 1,
@@ -5054,7 +5460,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseEnergy": 2,
+        "PowerType": "EnergyNextTurnPower"
     },
     "Scourge": {
         "Cost": 1,
@@ -5064,7 +5472,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 1,
+        "PowerType": "DoomPower",
+        "UpgradeCardsBy": 1
     },
     "Scrape": {
         "Cost": 1,
@@ -5076,7 +5487,9 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 7,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "BaseCards": 4,
+        "UpgradeCardsBy": 1
     },
     "Scrawl": {
         "Cost": 1,
@@ -5117,7 +5530,8 @@
         "IsEthereal": true,
         "Keywords": [
             "Ethereal"
-        ]
+        ],
+        "BaseCards": 1
     },
     "SecondWind": {
         "Cost": 1,
@@ -5169,7 +5583,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 9,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "BaseCards": 3
     },
     "SeekingEdge": {
         "Cost": 1,
@@ -5179,7 +5594,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "SeekingEdgePower"
     },
     "SentryMode": {
         "Cost": 2,
@@ -5189,7 +5605,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "SentryModePower"
     },
     "SerpentForm": {
         "Cost": 3,
@@ -5199,7 +5616,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "SerpentFormPower"
     },
     "SetupStrike": {
         "Cost": 1,
@@ -5211,7 +5629,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 7,
-        "UpgradeDamageBy": 2
+        "BaseStr": 2,
+        "UpgradeDamageBy": 2,
+        "PowerType": "SetupStrikePower",
+        "UpgradeStrBy": 1
     },
     "SevenStars": {
         "Cost": 2,
@@ -5244,7 +5665,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "ShadowmeldPower"
     },
     "ShadowShield": {
         "Cost": 2,
@@ -5266,7 +5688,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 3,
+        "PowerType": "ShadowStepPower"
     },
     "Shame": {
         "Cost": -1,
@@ -5278,7 +5702,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Unplayable"
-        ]
+        ],
+        "PowerType": "FrailPower"
     },
     "SharedFate": {
         "Cost": 0,
@@ -5290,7 +5715,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "StrengthPower"
     },
     "Shatter": {
         "Cost": 1,
@@ -5342,7 +5768,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "WeakPower"
     },
     "Shroud": {
         "Cost": 1,
@@ -5354,7 +5781,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 2,
-        "UpgradeBlockBy": 1
+        "UpgradeBlockBy": 1,
+        "PowerType": "ShroudPower"
     },
     "ShrugItOff": {
         "Cost": 1,
@@ -5366,7 +5794,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 8,
-        "UpgradeBlockBy": 3
+        "UpgradeBlockBy": 3,
+        "BaseCards": 1
     },
     "SicEm": {
         "Cost": 1,
@@ -5378,7 +5807,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 5,
-        "UpgradeDamageBy": 1
+        "UpgradeDamageBy": 1,
+        "PowerType": "SicEmPower"
     },
     "SignalBoost": {
         "Cost": 1,
@@ -5390,7 +5820,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "PowerType": "SignalBoostPower"
     },
     "Skewer": {
         "Cost": 0,
@@ -5412,7 +5843,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 1
     },
     "SleightOfFlesh": {
         "Cost": 2,
@@ -5422,7 +5855,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "SleightOfFleshPower"
     },
     "Slice": {
         "Cost": 0,
@@ -5446,7 +5880,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 1
     },
     "Sloth": {
         "Cost": -1,
@@ -5456,7 +5891,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "SlothPower"
     },
     "Smokestack": {
         "Cost": 1,
@@ -5466,7 +5902,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "SmokestackPower"
     },
     "Snakebite": {
         "Cost": 2,
@@ -5478,7 +5915,10 @@
         "IsEthereal": false,
         "Keywords": [
             "Retain"
-        ]
+        ],
+        "BasePoison": 7,
+        "PowerType": "PoisonPower",
+        "UpgradePoisonBy": 3
     },
     "Snap": {
         "Cost": 1,
@@ -5506,7 +5946,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Sly"
-        ]
+        ],
+        "PowerType": "SneakyPower"
     },
     "SolarStrike": {
         "Cost": 1,
@@ -5542,7 +5983,9 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 2,
+        "UpgradeCardsBy": 1
     },
     "SoulStorm": {
         "Cost": 1,
@@ -5591,7 +6034,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 1,
+        "PowerType": "SpectrumShiftPower"
     },
     "Speedster": {
         "Cost": 2,
@@ -5603,7 +6048,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "PowerType": "SpeedsterPower"
     },
     "Spinner": {
         "Cost": 1,
@@ -5613,7 +6059,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "SpinnerPower"
     },
     "SpiritOfAsh": {
         "Cost": 1,
@@ -5625,7 +6072,8 @@
         "IsEthereal": true,
         "Keywords": [
             "Ethereal"
-        ]
+        ],
+        "PowerType": "SpiritOfAshPower"
     },
     "Spite": {
         "Cost": 0,
@@ -5668,7 +6116,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 2
     },
     "SporeMind": {
         "Cost": 1,
@@ -5704,7 +6153,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 2
+        "BaseVuln": 2,
+        "UpgradeDamageBy": 2,
+        "PowerType": "VulnerablePower",
+        "UpgradeVulnBy": 1
     },
     "Squeeze": {
         "Cost": 3,
@@ -5736,7 +6188,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "StampedePower"
     },
     "Stardust": {
         "Cost": 0,
@@ -5780,7 +6233,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "PlatingPower"
     },
     "Storm": {
         "Cost": 1,
@@ -5790,7 +6244,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "StormPower"
     },
     "StormOfSteel": {
         "Cost": 1,
@@ -5812,7 +6267,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 8,
-        "UpgradeDamageBy": 2
+        "UpgradeDamageBy": 2,
+        "PowerType": "StranglePower"
     },
     "Stratagem": {
         "Cost": 1,
@@ -5822,7 +6278,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "StratagemPower"
     },
     "StrikeDefect": {
         "Cost": 1,
@@ -5892,7 +6349,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "SubroutinePower"
     },
     "SuckerPunch": {
         "Cost": 1,
@@ -5904,7 +6362,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 8,
-        "UpgradeDamageBy": 2
+        "BaseWeak": 1,
+        "UpgradeDamageBy": 2,
+        "PowerType": "WeakPower",
+        "UpgradeWeakBy": 1
     },
     "SummonForth": {
         "Cost": 1,
@@ -5928,7 +6389,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 24,
-        "UpgradeDamageBy": 8
+        "UpgradeDamageBy": 8,
+        "BaseEnergy": 3
     },
     "Supercritical": {
         "Cost": 0,
@@ -5940,7 +6402,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseEnergy": 4
     },
     "Supermassive": {
         "Cost": 1,
@@ -5966,7 +6429,10 @@
             "Innate"
         ],
         "BaseDamage": 11,
-        "UpgradeDamageBy": 6
+        "BaseWeak": 3,
+        "UpgradeDamageBy": 6,
+        "PowerType": "WeakPower",
+        "UpgradeWeakBy": 2
     },
     "Survivor": {
         "Cost": 1,
@@ -5990,7 +6456,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 6,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "BaseCards": 1
     },
     "SweepingGaze": {
         "Cost": 0,
@@ -6026,7 +6493,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "SwordSagePower"
     },
     "Synchronize": {
         "Cost": 1,
@@ -6039,7 +6507,8 @@
         "Keywords": [
             "Exhaust",
             "Exhaust"
-        ]
+        ],
+        "PowerType": "SynchronizePower"
     },
     "Synthesis": {
         "Cost": 2,
@@ -6051,7 +6520,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 12,
-        "UpgradeDamageBy": 6
+        "UpgradeDamageBy": 6,
+        "PowerType": "FreePowerPower"
     },
     "Tactician": {
         "Cost": 3,
@@ -6063,7 +6533,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Sly"
-        ]
+        ],
+        "BaseEnergy": 1
     },
     "TagTeam": {
         "Cost": 2,
@@ -6075,7 +6546,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 11,
-        "UpgradeDamageBy": 4
+        "UpgradeDamageBy": 4,
+        "PowerType": "TagTeamPower"
     },
     "Tank": {
         "Cost": 1,
@@ -6085,7 +6557,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "TankPower"
     },
     "Taunt": {
         "Cost": 1,
@@ -6097,7 +6570,10 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 7,
-        "UpgradeBlockBy": 1
+        "BaseVuln": 1,
+        "UpgradeBlockBy": 1,
+        "PowerType": "VulnerablePower",
+        "UpgradeVulnBy": 1
     },
     "TearAsunder": {
         "Cost": 2,
@@ -6129,7 +6605,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "VigorPower"
     },
     "TeslaCoil": {
         "Cost": 0,
@@ -6151,7 +6628,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "TheBombPower"
     },
     "TheGambit": {
         "Cost": 0,
@@ -6163,7 +6641,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 50,
-        "UpgradeBlockBy": 25
+        "UpgradeBlockBy": 25,
+        "PowerType": "TheGambitPower"
     },
     "TheHunt": {
         "Cost": 1,
@@ -6177,7 +6656,8 @@
             "Exhaust"
         ],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 5
+        "UpgradeDamageBy": 5,
+        "PowerType": "TheHuntPower"
     },
     "TheScythe": {
         "Cost": 2,
@@ -6201,7 +6681,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "PowerType": "TheSealedThronePower"
     },
     "TheSmith": {
         "Cost": 1,
@@ -6224,7 +6705,8 @@
         "Keywords": [
             "Exhaust",
             "Exhaust"
-        ]
+        ],
+        "BaseCards": 2
     },
     "Thrash": {
         "Cost": 1,
@@ -6260,7 +6742,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "ThunderPower"
     },
     "Thunderclap": {
         "Cost": 1,
@@ -6272,7 +6755,9 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 4,
-        "UpgradeDamageBy": 3
+        "BaseVuln": 1,
+        "UpgradeDamageBy": 3,
+        "PowerType": "VulnerablePower"
     },
     "TimesUp": {
         "Cost": 2,
@@ -6296,7 +6781,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "ToolsOfTheTradePower"
     },
     "ToricToughness": {
         "Cost": 2,
@@ -6308,7 +6794,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseBlock": 5,
-        "UpgradeBlockBy": 2
+        "UpgradeBlockBy": 2,
+        "PowerType": "ToricToughnessPower"
     },
     "Toxic": {
         "Cost": 1,
@@ -6331,7 +6818,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "TrackingPower"
     },
     "Transfigure": {
         "Cost": 1,
@@ -6344,7 +6832,8 @@
         "Keywords": [
             "Exhaust",
             "Exhaust"
-        ]
+        ],
+        "BaseEnergy": 1
     },
     "TrashToTreasure": {
         "Cost": 1,
@@ -6356,7 +6845,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Innate"
-        ]
+        ],
+        "PowerType": "TrashToTreasurePower"
     },
     "Tremble": {
         "Cost": 1,
@@ -6368,7 +6858,10 @@
         "IsEthereal": false,
         "Keywords": [
             "Exhaust"
-        ]
+        ],
+        "BaseVuln": 3,
+        "PowerType": "VulnerablePower",
+        "UpgradeVulnBy": 1
     },
     "TrueGrit": {
         "Cost": 1,
@@ -6392,7 +6885,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseEnergy": 2
     },
     "TwinStrike": {
         "Cost": 1,
@@ -6417,7 +6911,8 @@
         "Keywords": [
             "Exhaust",
             "Innate"
-        ]
+        ],
+        "PowerType": "TyrannyPower"
     },
     "UltimateDefend": {
         "Cost": 1,
@@ -6474,7 +6969,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "UnmovablePower"
     },
     "Unrelenting": {
         "Cost": 2,
@@ -6486,7 +6982,8 @@
         "IsEthereal": false,
         "Keywords": [],
         "BaseDamage": 12,
-        "UpgradeDamageBy": 6
+        "UpgradeDamageBy": 6,
+        "PowerType": "FreeAttackPower"
     },
     "Untouchable": {
         "Cost": 2,
@@ -6510,7 +7007,9 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 3,
+        "UpgradeCardsBy": 1
     },
     "Uppercut": {
         "Cost": 2,
@@ -6521,7 +7020,8 @@
         "IsExhaust": false,
         "IsEthereal": false,
         "Keywords": [],
-        "BaseDamage": 13
+        "BaseDamage": 13,
+        "PowerType": "WeakPower"
     },
     "Uproar": {
         "Cost": 2,
@@ -6549,7 +7049,8 @@
             "Ethereal"
         ],
         "BaseDamage": 10,
-        "UpgradeDamageBy": 3
+        "UpgradeDamageBy": 3,
+        "PowerType": "VeilpiercerPower"
     },
     "Venerate": {
         "Cost": 1,
@@ -6569,7 +7070,10 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "BaseCards": 1,
+        "PowerType": "ViciousPower",
+        "UpgradeCardsBy": 1
     },
     "Void": {
         "Cost": -1,
@@ -6582,7 +7086,8 @@
         "Keywords": [
             "Unplayable",
             "Ethereal"
-        ]
+        ],
+        "BaseEnergy": 1
     },
     "VoidForm": {
         "Cost": 3,
@@ -6595,7 +7100,8 @@
         "Keywords": [
             "Ethereal",
             "Ethereal"
-        ]
+        ],
+        "PowerType": "VoidFormPower"
     },
     "Volley": {
         "Cost": 0,
@@ -6630,7 +7136,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "WasteAwayPower"
     },
     "WellLaidPlans": {
         "Cost": 1,
@@ -6642,7 +7149,8 @@
         "IsEthereal": false,
         "Keywords": [
             "Retain"
-        ]
+        ],
+        "PowerType": "WellLaidPlansPower"
     },
     "Whirlwind": {
         "Cost": 0,
@@ -6706,7 +7214,8 @@
         "Keywords": [
             "Exhaust",
             "Retain"
-        ]
+        ],
+        "BaseEnergy": 1
     },
     "Wound": {
         "Cost": -1,
@@ -6728,7 +7237,8 @@
         "IsFinesse": false,
         "IsExhaust": false,
         "IsEthereal": false,
-        "Keywords": []
+        "Keywords": [],
+        "PowerType": "IntangiblePower"
     },
     "Writhe": {
         "Cost": -1,

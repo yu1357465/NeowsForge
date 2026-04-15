@@ -1,0 +1,243 @@
+// 🎯 机制分类：【Deck_Manipulation】
+// 📦 进度批次：第 9 组 (共 12 组)
+// 🗃️ 包含卡牌：9 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: Purity.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(3));
+
+	public Purity()
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		foreach (CardModel item in await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(base.SelectionScreenPrompt, 0, base.DynamicVars.Cards.IntValue), context: choiceContext, player: base.Owner, filter: null, source: this))
+		{
+			await CardCmd.Exhaust(choiceContext, item);
+		}
+
+// ========================================
+// 文件名: Quasar.cs
+// ========================================
+public sealed class Quasar : CardModel
+{
+	public override int CanonicalStarCost => 2;
+
+	public Quasar()
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		List<CardModel> cards = CardFactory.GetDistinctForCombat(base.Owner, ModelDb.CardPool<ColorlessCardPool>().GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint), 3, base.Owner.RunState.Rng.CombatCardGeneration).ToList();
+		if (base.IsUpgraded)
+		{
+			CardCmd.Upgrade(cards, CardPreviewStyle.HorizontalLayout);
+		}
+		CardModel cardModel = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards, base.Owner, canSkip: true);
+		if (cardModel != null)
+		{
+			await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+		}
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Reboot.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new CardsVar(4));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public Reboot()
+		: base(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		foreach (CardModel item in PileType.Hand.GetPile(base.Owner).Cards.ToList())
+		{
+			await CardPileCmd.Add(item, PileType.Draw);
+		}
+
+// ========================================
+// 文件名: Regret.cs
+// ========================================
+public sealed class Regret : CardModel
+{
+	private int _cardsInHand;
+
+	public override int MaxUpgradeLevel => 0;
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Unplayable);
+
+	private int CardsInHand
+	{
+		get
+		{
+			return _cardsInHand;
+		}
+		set
+		{
+			AssertMutable();
+			_cardsInHand = value;
+		}
+	}
+
+	public override bool HasTurnEndInHandEffect => true;
+
+	public Regret()
+		: base(-1, CardType.Curse, CardRarity.Curse, TargetType.None)
+	{
+	}
+
+	public override Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+	{
+		if (side != CombatSide.Player)
+		{
+			return Task.CompletedTask;
+		}
+		if (base.Pile.Type != PileType.Hand)
+		{
+			return Task.CompletedTask;
+		}
+		CardsInHand = base.Pile.Cards.Count;
+		return Task.CompletedTask;
+	}
+
+	public override async Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
+	{
+		await CreatureCmd.Damage(choiceContext, base.Owner.Creature, CardsInHand, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
+		CardsInHand = 0;
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Restlessness.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new CardsVar(2),
+		new EnergyVar(2)
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(base.EnergyHoverTip);
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Retain);
+
+	protected override bool ShouldGlowGoldInternal => IsOnlyCardInHand;
+
+	private bool IsOnlyCardInHand => !PileType.Hand.GetPile(base.Owner).Cards.Except(new global::_003C_003Ez__ReadOnlySingleElementList<CardModel>(this)).Any();
+
+	public Restlessness()
+		: base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		if (IsOnlyCardInHand)
+		{
+			for (int i = 0; i < base.DynamicVars.Cards.IntValue; i++)
+			{
+				await CardPileCmd.Draw(choiceContext, base.Owner);
+			}
+
+// ========================================
+// 文件名: RightHandHand.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new OstyDamageVar(4m, ValueProp.Move),
+		new EnergyVar(2)
+	});
+
+	public RightHandHand()
+		: base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		if (!Osty.CheckMissingWithAnim(base.Owner))
+		{
+			await DamageCmd.Attack(base.DynamicVars.OstyDamage.BaseValue).FromOsty(base.Owner.Osty, this).Targeting(cardPlay.Target)
+				.WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
+				.Execute(choiceContext);
+		}
+
+// ========================================
+// 文件名: Salvo.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(12m, ValueProp.Move));
+
+	public Salvo()
+		: base(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		await PowerCmd.Apply<RetainHandPower>(base.Owner.Creature, 1m, base.Owner.Creature, this);
+	}
+
+// ========================================
+// 文件名: Scavenge.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new EnergyVar(2));
+
+	public Scavenge()
+		: base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		CardModel cardModel = (await CardSelectCmd.FromHand(choiceContext, base.Owner, new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1), null, this)).FirstOrDefault();
+		if (cardModel != null)
+		{
+			await CardCmd.Exhaust(choiceContext, cardModel);
+		}
+
+// ========================================
+// 文件名: Scrawl.cs
+// ========================================
+public sealed class Scrawl : CardModel
+{
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Exhaust);
+
+	public Scrawl()
+		: base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		int num = 10 - base.Owner.PlayerCombatState.Hand.Cards.Count;
+		await CardPileCmd.Draw(choiceContext, num, base.Owner);
+	}
+
+	protected override void OnUpgrade()
+	{
+		AddKeyword(CardKeyword.Retain);
+	}
+}
+
+...(内容已截断)
+

@@ -3,30 +3,32 @@ import re
 import json
 
 # ================= 路径配置区 =================
-# 【核心】请确保这两个路径指向你电脑上真实解包的 C# 文件夹
 CARDS_DIR = r"D:\MyFiles_UK_updated\Tools_Software\MyProjects\NeowsForge\sts2\MegaCrit.Sts2.Core.Models.Cards"
 POOLS_DIR = r"D:\MyFiles_UK_updated\Tools_Software\MyProjects\NeowsForge\sts2\MegaCrit.Sts2.Core.Models.CardPools"
 OUTPUT_FILE = "STS2_Card_Database.json"
 # ===============================================
 
-def build_class_dictionary():
-    """
-    第一步：扫描 CardPools，建立【卡牌名 -> 职业】的字典库
-    """
-    class_dict = {}
+# 🎯 新增：超级映射字典
+# 负责把 C# 里的底层类名/变量名，翻译成前端 JS 引擎能认出的 JSON 键名
+POWER_MAPPING = {
+    "WeakPower": "Weak", "Weak": "Weak",
+    "VulnerablePower": "Vuln", "Vulnerable": "Vuln", "Vuln": "Vuln",
+    "StrengthPower": "Str", "Strength": "Str", "Str": "Str",
+    "DexterityPower": "Dex", "Dexterity": "Dex", "Dex": "Dex",
+    "PoisonPower": "Poison", "Poison": "Poison"
+}
 
+def build_class_dictionary():
+    class_dict = {}
     if not os.path.exists(POOLS_DIR):
         print(f"【警告】找不到卡池文件夹：{POOLS_DIR}。将跳过职业分类。")
         return class_dict
 
-    # 匹配 ModelDb.Card<CardName>() 语法的正则
     card_in_pool_pattern = re.compile(r'ModelDb\.Card<([a-zA-Z0-9_]+)>')
 
     for filename in os.listdir(POOLS_DIR):
         if not filename.endswith("CardPool.cs"):
             continue
-
-        # 从文件名提取职业名字 (如 IroncladCardPool.cs -> Ironclad)
         class_name = filename.replace("CardPool.cs", "")
         filepath = os.path.join(POOLS_DIR, filename)
 
@@ -41,29 +43,44 @@ def build_class_dictionary():
     return class_dict
 
 def extract_cards_with_classes(class_dict):
-    """
-    第二步：扫描 Cards 文件夹提取详细属性，并贴上职业标签
-    """
     card_database = {}
 
     base_pattern = re.compile(r'base\(\s*([^\,]+)\s*,\s*CardType\.([a-zA-Z0-9_]+)\s*,\s*CardRarity\.([a-zA-Z0-9_]+)')
-    # 新刀片：专门捕捉 new DamageVar(6m) 或 new CalculatedDamageVar(8m) 里面的数字
+
+    # 基础数值刀片
     damage_pattern = re.compile(r'DamageVar[^\(]*\(\s*(\d+)')
-    # 新刀片：专门捕捉 new BlockVar(5m) 里面的数字
     block_pattern = re.compile(r'BlockVar[^\(]*\(\s*(\d+)')
     keyword_pattern = re.compile(r'CardKeyword\.([a-zA-Z0-9_]+)')
 
-    # ================= 替换为二代专属：动态变量升级提取刀片 =================
-    # 专门捕捉 Damage.UpgradeValueBy(3m) 或 Damage.UpgradeValueBy(-1m)
+    # 升级数值刀片
     upg_dmg_pattern = re.compile(r'Damage\.UpgradeValueBy\(\s*(-?\d+)')
-
-    # 专门捕捉 Block.UpgradeValueBy(2m)
     upg_blk_pattern = re.compile(r'Block\.UpgradeValueBy\(\s*(-?\d+)')
-
-    # 费用的升级通常是直接变成某个固定值 (如 UpgradeCostTo(0))，或者 Cost.UpgradeValueTo(0)
-    # 这里加一个兼容性刀片，两种写法都能抓
     upg_cost_pattern = re.compile(r'(?:UpgradeCostTo|UpgradeBaseCost|Cost\.UpgradeValueTo)\(\s*(-?\d+)')
-    # ======================================================================
+
+    # 🎯 V1.2 新增：捕捉专属的二代动态变量
+    # [原代码注释] cards_var_pattern = re.compile(r'CardsVar\s*\(\s*(?:\"[a-zA-Z0-9_]+\"\s*,\s*)?(\d+)')
+
+    # 🎯 [采购单 1]：提取 new CardsVar(数字)`
+    cards_var_pattern = re.compile(r'CardsVar\s*\(\s*(?:\"[a-zA-Z0-9_]+\"\s*,\s*)?(\d+)')
+
+    # 🎯 [采购单 2]：提取 new EnergyVar(数字)
+    energy_var_pattern = re.compile(r'new EnergyVar\((\d+)\)')
+
+    str_loss_pattern = re.compile(r'DynamicVar\(\s*"StrengthLoss"\s*,\s*(\d+)m?')
+
+    upg_cards_pattern = re.compile(r'Cards\.UpgradeValue(?:By|To)\(\s*(-?\d+)')
+    upg_str_loss_pattern = re.compile(r'\["StrengthLoss"\]\.UpgradeValue(?:By|To)\(\s*(-?\d+)')
+
+    # 🎯 新增：泛型 Power 提取刀片
+    base_power_pattern = re.compile(r'PowerVar<([A-Za-z0-9_]+)>\(\s*(\d+)')
+    upg_power_pattern = re.compile(r'DynamicVars\.([A-Za-z0-9_]+)\.UpgradeValue(?:By|To)\(\s*(-?\d+)')
+
+    # 🎯 [采购单 3]：提取 PowerCmd.Apply<Power名称>
+    power_cmd_pattern = re.compile(r'PowerCmd\.Apply<(\w+Power)>')
+
+    # 兜底：保留二代可能存在的变种魔法数字
+    magic_pattern = re.compile(r'MagicNumberVar[^\(]*\(\s*(\d+)')
+    upg_magic_pattern = re.compile(r'MagicNumber\.UpgradeValueBy\(\s*(-?\d+)')
 
     if not os.path.exists(CARDS_DIR):
         print(f"【严重错误】：找不到卡牌源码文件夹，请检查：\n{CARDS_DIR}")
@@ -79,12 +96,10 @@ def extract_cards_with_classes(class_dict):
         card_name = filename[:-3]
         filepath = os.path.join(CARDS_DIR, filename)
 
-        # 核心过滤：白名单检测。如果这张卡不在任何正规卡池里（不在花名册上），直接当衍生牌/废案扔掉！
         if card_name not in class_dict:
             token_count += 1
             continue
 
-        # 如果在白名单内，获取它所属的职业
         card_class = class_dict[card_name]
 
         with open(filepath, 'r', encoding='utf-8', errors='ignore') as file:
@@ -106,35 +121,39 @@ def extract_cards_with_classes(class_dict):
                     "Type": card_type,
                     "Rarity": rarity,
                     "Class": card_class,
-                    "IsFinesse": False, # 强制初始化，拒绝幽灵！
+                    "IsFinesse": False,
                     "IsExhaust": False,
                     "IsEthereal": False,
                     "Keywords": []
                 }
 
+                # --- 基础数值 ---
                 damage_match = damage_pattern.search(content)
-                if damage_match:
-                    card_data["BaseDamage"] = int(damage_match.group(1))
+                if damage_match: card_data["BaseDamage"] = int(damage_match.group(1))
 
                 block_match = block_pattern.search(content)
-                if block_match:
-                    card_data["BaseBlock"] = int(block_match.group(1))
+                if block_match: card_data["BaseBlock"] = int(block_match.group(1))
 
+                magic_match = magic_pattern.search(content)
+                if magic_match: card_data["BaseMagicNumber"] = int(magic_match.group(1))
+
+                # --- 关键字雷达 ---
                 keywords = keyword_pattern.findall(content)
                 if keywords:
-                    # 把所有提取到的英文关键字存成一个列表，方便以后扩展
                     card_data["Keywords"] = keywords
+                    if "Sly" in keywords: card_data["IsFinesse"] = True
+                    if "Exhaust" in keywords: card_data["IsExhaust"] = True
+                    if "Ethereal" in keywords: card_data["IsEthereal"] = True
 
-                    # 精准打击：只要列表里有 Sly，这张牌就是奇巧火花塞！
-                    if "Sly" in keywords:
-                        card_data["IsFinesse"] = True
-                    # 顺手把消耗和虚无也从底层抓出来，防止翻译文案作妖
-                    if "Exhaust" in keywords:
-                        card_data["IsExhaust"] = True
-                    if "Ethereal" in keywords:
-                        card_data["IsEthereal"] = True
+                # --- 基础 Buff 提取 (核心突破) ---
+                for p_match in base_power_pattern.finditer(content):
+                    power_name = p_match.group(1)
+                    power_val = int(p_match.group(2))
+                    json_key = POWER_MAPPING.get(power_name)
+                    if json_key:
+                        card_data[f"Base{json_key}"] = power_val
 
-                # 提取篝火强化属性
+                # --- 强化升级数值 ---
                 upg_dmg_match = upg_dmg_pattern.search(content)
                 if upg_dmg_match: card_data["UpgradeDamageBy"] = int(upg_dmg_match.group(1))
 
@@ -143,7 +162,39 @@ def extract_cards_with_classes(class_dict):
 
                 upg_cost_match = upg_cost_pattern.search(content)
                 if upg_cost_match: card_data["UpgradeCostTo"] = int(upg_cost_match.group(1))
-                # ==========================================================
+
+                upg_magic_match = upg_magic_pattern.search(content)
+                if upg_magic_match: card_data["UpgradeMagicNumberBy"] = int(upg_magic_match.group(1))
+
+                # --- 专属动态变量提取 ---
+                # 🎯 [采购单 1]：BaseCards 写入
+                cards_match = cards_var_pattern.search(content)
+                if cards_match: card_data["BaseCards"] = int(cards_match.group(1))
+
+                # 🎯 [采购单 2]：BaseEnergy 写入
+                energy_match = energy_var_pattern.search(content)
+                if energy_match: card_data["BaseEnergy"] = int(energy_match.group(1))
+
+                # 🎯 [采购单 3]：PowerType 写入
+                power_cmd_match = power_cmd_pattern.search(content)
+                if power_cmd_match: card_data["PowerType"] = power_cmd_match.group(1)
+
+                str_loss_match = str_loss_pattern.search(content)
+                if str_loss_match: card_data["BaseStrengthLoss"] = int(str_loss_match.group(1))
+
+                upg_cards_match = upg_cards_pattern.search(content)
+                if upg_cards_match: card_data["UpgradeCardsBy"] = int(upg_cards_match.group(1))
+
+                upg_str_loss_match = upg_str_loss_pattern.search(content)
+                if upg_str_loss_match: card_data["UpgradeStrengthLossBy"] = int(upg_str_loss_match.group(1))
+
+                # --- 强化 Buff 提取 (核心突破) ---
+                for upg_p_match in upg_power_pattern.finditer(content):
+                    var_name = upg_p_match.group(1)
+                    upg_val = int(upg_p_match.group(2))
+                    json_key = POWER_MAPPING.get(var_name)
+                    if json_key:
+                        card_data[f"Upgrade{json_key}By"] = upg_val
 
                 card_database[card_name] = card_data
                 valid_count += 1
@@ -158,6 +209,5 @@ def extract_cards_with_classes(class_dict):
     print(f"所有底层图纸已封存至：{OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    # 执行流水线
     dictionary = build_class_dictionary()
     extract_cards_with_classes(dictionary)

@@ -1,0 +1,305 @@
+// 🎯 机制分类：【Conditions】
+// 📦 进度批次：第 3 组 (共 7 组)
+// 🗃️ 包含卡牌：9 张
+// 👨‍💻 任务指令：请分析以下卡牌的 C# 逻辑并输出对应的 JS 特征检测代码
+
+// ========================================
+// 文件名: FranticEscape.cs
+// ========================================
+public sealed class FranticEscape : CardModel
+{
+	protected override IEnumerable<IHoverTip> ExtraHoverTips
+	{
+		get
+		{
+			SandpitPower sandpitPower = GetSandpitEnemy()?.GetPower<SandpitPower>();
+			if (sandpitPower == null)
+			{
+				return new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(HoverTipFactory.FromPower<SandpitPower>());
+			}
+			return sandpitPower.HoverTips;
+		}
+	}
+
+	public override int MaxUpgradeLevel => 0;
+
+	public override bool CanBeGeneratedInCombat => false;
+
+	public FranticEscape()
+		: base(1, CardType.Status, CardRarity.Status, TargetType.Self)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		Creature sandpitEnemy = GetSandpitEnemy();
+		if (sandpitEnemy != null)
+		{
+			SandpitPower sandpitPower = sandpitEnemy.Powers.OfType<SandpitPower>().FirstOrDefault((SandpitPower s) => s.Target == base.Owner.Creature);
+			if (sandpitPower != null)
+			{
+				await PowerCmd.ModifyAmount(sandpitPower, 1m, sandpitEnemy, this);
+			}
+		}
+		base.EnergyCost.AddThisCombat(1);
+	}
+
+	private Creature? GetSandpitEnemy()
+	{
+		return base.CombatState?.Enemies.FirstOrDefault((Creature c) => c.HasPower<SandpitPower>());
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Ftl.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[3]
+	{
+		new DamageVar(5m, ValueProp.Move),
+		new IntVar("PlayMax", 3m),
+		new CardsVar(1)
+	});
+
+	private bool CanDrawCard
+	{
+		get
+		{
+			int num = CombatManager.Instance.History.CardPlaysFinished.Count((CardPlayFinishedEntry e) => e.HappenedThisTurn(base.CombatState) && e.CardPlay.Card.Owner == base.Owner);
+			return num < base.DynamicVars["PlayMax"].IntValue;
+		}
+	}
+
+	public Ftl()
+		: base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		if (CanDrawCard)
+		{
+			await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
+		}
+
+// ========================================
+// 文件名: GoForTheEyes.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(3m, ValueProp.Move),
+		new PowerVar<WeakPower>(1m)
+	});
+
+	public GoForTheEyes()
+		: base(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
+			.Execute(choiceContext);
+		if (cardPlay.Target.Monster.IntendsToAttack)
+		{
+			await PowerCmd.Apply<WeakPower>(cardPlay.Target, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);
+		}
+
+// ========================================
+// 文件名: GuidingStar.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(12m, ValueProp.Move),
+		new CardsVar(2)
+	});
+
+	public GuidingStar()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await CreatureCmd.TriggerAnim(base.Owner.Creature, "Cast", base.Owner.Character.CastAnimDelay);
+		NCreature nCreature = NCombatRoom.Instance?.GetCreatureNode(cardPlay.Target);
+		if (nCreature != null)
+		{
+			SfxCmd.Play("event:/sfx/characters/regent/regent_guiding_star");
+			NSmallMagicMissileVfx nSmallMagicMissileVfx = NSmallMagicMissileVfx.Create(nCreature.GetBottomOfHitbox(), new Color("50b598"));
+			NCombatRoom.Instance.CombatVfxContainer.AddChildSafely(nSmallMagicMissileVfx);
+			await Cmd.Wait(nSmallMagicMissileVfx.WaitTime);
+		}
+
+// ========================================
+// 文件名: Guilty.cs
+// ========================================
+public sealed class Guilty : CardModel
+{
+	public const int maxCombats = 5;
+
+	private const string _combatsKey = "Combats";
+
+	private int _combatsSeen;
+
+	public override int MaxUpgradeLevel => 0;
+
+	protected override IEnumerable<DynamicVar> CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DynamicVar("Combats", 5m));
+
+	public override IEnumerable<CardKeyword> CanonicalKeywords => new global::_003C_003Ez__ReadOnlySingleElementList<CardKeyword>(CardKeyword.Unplayable);
+
+	[SavedProperty]
+	public int CombatsSeen
+	{
+		get
+		{
+			return _combatsSeen;
+		}
+		set
+		{
+			AssertMutable();
+			_combatsSeen = value;
+			base.DynamicVars["Combats"].BaseValue = 5 - CombatsSeen;
+		}
+	}
+
+	public Guilty()
+		: base(-1, CardType.Curse, CardRarity.Curse, TargetType.None)
+	{
+	}
+
+	public override async Task AfterCombatEnd(CombatRoom _)
+	{
+		CardPile? pile = base.Pile;
+		if (pile != null && pile.Type == PileType.Deck)
+		{
+			CombatsSeen++;
+			if (CombatsSeen >= 5 && base.Pile.Type == PileType.Deck)
+			{
+				await CardPileCmd.RemoveFromDeck(this);
+			}
+		}
+	}
+}
+
+...(内容已截断)
+
+// ========================================
+// 文件名: Hang.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(10m, ValueProp.Move));
+
+	public Hang()
+		: base(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+		int powerAmount = cardPlay.Target.GetPowerAmount<HangPower>();
+		int num = Math.Max(2, powerAmount);
+		if (powerAmount + num > 999999999)
+		{
+			num = Math.Max(0, 999999999 - powerAmount);
+		}
+
+// ========================================
+// 文件名: Headbutt.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DamageVar(9m, ValueProp.Move));
+
+	public Headbutt()
+		: base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_blunt", null, "blunt_attack.mp3")
+			.Execute(choiceContext);
+		CardSelectorPrefs prefs = new CardSelectorPrefs(base.SelectionScreenPrompt, 1);
+		CardPile pile = PileType.Discard.GetPile(base.Owner);
+		CardModel cardModel = (await CardSelectCmd.FromSimpleGrid(choiceContext, pile.Cards, base.Owner, prefs)).FirstOrDefault();
+		if (cardModel != null)
+		{
+			await CardPileCmd.Add(cardModel, PileType.Draw, CardPilePosition.Top);
+		}
+
+// ========================================
+// 文件名: HeavenlyDrill.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[2]
+	{
+		new DamageVar(8m, ValueProp.Move),
+		new EnergyVar(4)
+	});
+
+	public HeavenlyDrill()
+		: base(0, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		int num = ResolveEnergyXValue();
+		if (num >= base.DynamicVars.Energy.IntValue)
+		{
+			num *= 2;
+		}
+
+// ========================================
+// 文件名: HelixDrill.cs
+// ========================================
+CanonicalVars => new global::_003C_003Ez__ReadOnlyArray<DynamicVar>(new DynamicVar[4]
+	{
+		new DamageVar(3m, ValueProp.Move),
+		new CalculationBaseVar(0m),
+		new CalculationExtraVar(1m),
+		new CalculatedVar("CalculatedHits").WithMultiplier(delegate(CardModel card, Creature? _)
+		{
+			if (card.Pile == null)
+			{
+				return 0m;
+			}
+			int num = (from e in CombatManager.Instance.History.Entries.OfType<EnergySpentEntry>()
+				where e.HappenedThisTurn(card.CombatState) && e.Actor.Player == card.Owner
+				select e).Sum((EnergySpentEntry c) => c.Amount);
+			if (card.Pile.Type == PileType.Play)
+			{
+				num -= card.EnergyCost.GetWithModifiers(CostModifiers.All);
+			}
+			return num;
+		})
+	});
+
+	protected override IEnumerable<IHoverTip> ExtraHoverTips => new global::_003C_003Ez__ReadOnlySingleElementList<IHoverTip>(base.EnergyHoverTip);
+
+	public HelixDrill()
+		: base(0, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+	{
+	}
+
+	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+	{
+		ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+		await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount((int)((CalculatedVar)base.DynamicVars["CalculatedHits"]).Calculate(cardPlay.Target)).FromCard(this)
+			.Targeting(cardPlay.Target)
+			.WithHitFx("vfx/vfx_attack_slash")
+			.Execute(choiceContext);
+	}
+
